@@ -1,5 +1,10 @@
 #include "Integer.h"
 
+InfiniteArithmetic::Integer::Integer()
+{
+    _Size = 0;
+}
+
 InfiniteArithmetic::Integer::Integer(std::string num)
 {
     _Size = num.length();

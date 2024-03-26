@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 namespace InfiniteArithmetic
 {
@@ -20,12 +21,16 @@ namespace InfiniteArithmetic
     
         public:
 
+            // constructors
+
+            Integer();
             Integer(std::string);            
 
             // used to `Print` the integer
             void Print();
-            Integer Add(const Integer &);
+            friend std::ostream &operator<< (std::ostream &, const Integer &);
 
+            Integer Add(const Integer &);
     };
 }
 
