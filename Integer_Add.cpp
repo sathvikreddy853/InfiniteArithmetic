@@ -37,9 +37,9 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
         if(i == other.Size - 1)
             inOther = false;
     }
-
-    if(carry != 0)
-       result.Array.push_back(carry);
+    
+    result.Array.push_back(carry);
+    result.PopZero();
 
     result.Size = result.Array.size();
 

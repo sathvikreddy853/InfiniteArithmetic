@@ -10,13 +10,8 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Complement()
         complement.Array[i] = 9 - complement.Array[i];
     }
 
-    while(complement.Size > 0 && complement.Array[complement.Size - 1] == 0)
-    {
-        complement.Array.pop_back();
-        complement.Size -= 1;
-    }
-
     complement = complement.Add(Integer("1"));
+    complement.PopZero();
 
     return complement;
 }

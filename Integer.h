@@ -34,6 +34,7 @@ namespace InfiniteArithmetic
             // static size_t RegisterSize(const Integer &, const Integer &);
 
             Integer Complement();
+            void PopZero();
 
             Integer Add(const Integer &);
             Integer Subtract(const Integer &);
