@@ -3,6 +3,7 @@
 InfiniteArithmetic::Integer::Integer()
 {
     _Size = 0;
+    _isNegative = false;
 }
 
 InfiniteArithmetic::Integer::Integer(std::string num)

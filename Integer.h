@@ -18,6 +18,7 @@ namespace InfiniteArithmetic
 
             std::vector<int> _Integer ;
             size_t _Size;
+            bool _isNegative;
     
         public:
 
@@ -30,7 +31,12 @@ namespace InfiniteArithmetic
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Integer &);
 
+            Integer Complement();
+
             Integer Add(const Integer &);
+            Integer Subtract(const Integer &);
+            Integer Multiply(const Integer &);
+            Integer Divide(const Integer &);
     };
 }
 

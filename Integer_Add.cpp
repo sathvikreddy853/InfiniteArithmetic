@@ -5,7 +5,13 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
 {
     Integer result;
 
-    bool inThis = true, inOther = true;
+    bool inThis = false, inOther = false;
+
+    if (this->_Size > 0)
+        inThis = true;
+
+    if (other._Size > 0)
+        inOther = true;
 
     int carry = 0;
     int digit = 0;
