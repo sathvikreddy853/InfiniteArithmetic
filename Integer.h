@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 namespace InfiniteArithmetic
 {
@@ -16,9 +15,9 @@ namespace InfiniteArithmetic
     {
         private:
 
-            std::vector<int> _Integer ;
-            size_t _Size;
-            bool _isNegative;
+            std::vector<int> Array;
+            size_t Size;
+            bool isNegative;
     
         public:
 
@@ -26,10 +25,13 @@ namespace InfiniteArithmetic
 
             Integer();
             Integer(std::string);            
+            Integer(const Integer &);
 
             // used to `Print` the integer
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Integer &);
+
+            // static size_t RegisterSize(const Integer &, const Integer &);
 
             Integer Complement();
 

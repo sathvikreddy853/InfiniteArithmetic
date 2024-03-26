@@ -3,12 +3,10 @@
 
 int main()
 {
-    // InfiniteArithmetic::Integer num1 ("999999");
-    // LOG(num1);
-    InfiniteArithmetic::Integer num2 ("96");
-    LOG(num2.Complement());
-    InfiniteArithmetic::Integer result = num2.Add(InfiniteArithmetic::Integer("1"));
-    LOG(result);
 
+    InfiniteArithmetic::Integer num1 ("9992564");
+    InfiniteArithmetic::Integer num2 (num1);
+    LOG(num1);
+    
     return 0; 
 }

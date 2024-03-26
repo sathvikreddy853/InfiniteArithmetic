@@ -1,16 +1,15 @@
 #include "Integer.h"
 
-
 InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &other)
 {
     Integer result;
 
     bool inThis = false, inOther = false;
 
-    if (this->_Size > 0)
+    if (this->Size > 0)
         inThis = true;
 
-    if (other._Size > 0)
+    if (other.Size > 0)
         inOther = true;
 
     int carry = 0;
@@ -23,26 +22,26 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
         // to calculate sum of digits and carry
         sum = carry; 
         if (inThis)
-            sum += this->_Integer[i];
+            sum += this->Array[i];
         if (inOther)
-            sum += other._Integer[i];
+            sum += other.Array[i];
 
         digit = sum%10;
         carry = sum/10;
-        result._Integer.push_back(digit);
+        result.Array.push_back(digit);
 
 
-        if(i == this->_Size - 1)
+        if(i == this->Size - 1)
             inThis = false;
         
-        if(i == other._Size - 1)
+        if(i == other.Size - 1)
             inOther = false;
     }
 
-    if (carry != 0)
-        result._Integer.push_back(carry);
+    if(carry != 0)
+       result.Array.push_back(carry);
 
-    result._Size = result._Integer.size();
+    result.Size = result.Array.size();
 
     return result;
 }

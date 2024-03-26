@@ -2,16 +2,26 @@
 
 InfiniteArithmetic::Integer::Integer()
 {
-    _Size = 0;
-    _isNegative = false;
+    Size = 0;
+    isNegative = false;
 }
 
 InfiniteArithmetic::Integer::Integer(std::string num)
 {
-    _Size = num.length();
+    Size = num.length();
 
-    for (size_t i=0; i < _Size; i++)
+    for (size_t i=0; i < Size; i++)
     {
-        _Integer.push_back((num[_Size-1-i] - '0'));
+        Array.push_back((num[Size-1-i] - '0'));
     }
+}
+
+InfiniteArithmetic::Integer::Integer(const Integer &obj)
+{
+    Size = obj.Size;
+
+    for(int i : obj.Array)
+        Array.push_back(i);
+    
+    isNegative = obj.isNegative;
 }

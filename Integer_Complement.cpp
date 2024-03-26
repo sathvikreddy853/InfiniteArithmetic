@@ -2,18 +2,21 @@
 
 InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Complement()
 {
-    for(int i=0; i<_Size; i++)
+    Integer complement;
+    complement = *this;
+
+    for(int i=0; i<Size; i++)
     {
-        _Integer[i] = 9 - _Integer[i];
+        complement.Array[i] = 9 - complement.Array[i];
     }
 
-    while(_Size > 0 && _Integer[_Size - 1] == 0)
+    while(complement.Size > 0 && complement.Array[complement.Size - 1] == 0)
     {
-        _Integer.pop_back();
-        _Size -= 1;
+        complement.Array.pop_back();
+        complement.Size -= 1;
     }
 
-    *this = this->Add(Integer("1"));
+    complement = complement.Add(Integer("1"));
 
-    return *this;
+    return complement;
 }
