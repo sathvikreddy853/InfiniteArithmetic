@@ -13,5 +13,7 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Complement()
         _Size -= 1;
     }
 
+    *this = this->Add(Integer("1"));
+
     return *this;
 }

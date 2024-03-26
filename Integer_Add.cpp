@@ -17,6 +17,7 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
     int digit = 0;
     int sum = 0;
 
+
     for(size_t i = 0; inThis || inOther; i++)
     {
         // to calculate sum of digits and carry

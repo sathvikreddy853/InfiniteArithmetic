@@ -3,12 +3,11 @@
 
 int main()
 {
-    InfiniteArithmetic::Integer num1 ("2124399");
-    LOG(num1);
-    InfiniteArithmetic::Integer num2 ("2124399");
-    LOG(num2.Complement().Add(num1).Complement());
-
-    InfiniteArithmetic::Integer result = num1.Add(num2);
+    // InfiniteArithmetic::Integer num1 ("999999");
+    // LOG(num1);
+    InfiniteArithmetic::Integer num2 ("96");
+    LOG(num2.Complement());
+    InfiniteArithmetic::Integer result = num2.Add(InfiniteArithmetic::Integer("1"));
     LOG(result);
 
     return 0; 
