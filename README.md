@@ -1,4 +1,4 @@
-# Infinite Arithmetic Library
+# Infinite Precision Arithmetic Library
 
 This library is made to accomodate numbers of infinite length. 
 
@@ -12,6 +12,16 @@ Simply include the files by using `#include "Integer.h"` or `#include "Float.h"`
 
 ## Integer
 Here's a briefing of the utilities in `Integer.h`
+
+Note: Provision can be added to add and sub
+
+| Functions | Purpose | 
+| --------- | --------- |
+| Add | adds two numbers together | 
+| Subtract | subtracts one number from the other | 
+| Multiply | multiplies two numbers | 
+| Divide | divides two numbers |
+| Complement | Takes the complement of given number | 
 
 ## Float
 And here are the directions to use `Float.h`
