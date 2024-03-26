@@ -8,11 +8,16 @@ InfiniteArithmetic::Integer::Integer()
 
 InfiniteArithmetic::Integer::Integer(std::string num)
 {
-    Size = num.length();
+    if(num[0] == '-')
+        isNegative = true;
+    else
+        isNegative = false;
 
-    for (size_t i=0; i < Size; i++)
+    Size = num.length() - isNegative;
+    
+    for(size_t i=0; i<Size; i++)
     {
-        Array.push_back((num[Size-1-i] - '0'));
+        Array.push_back((num[num.length()-i-1] - '0'));
     }
 }
 

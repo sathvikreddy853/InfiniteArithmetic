@@ -1,6 +1,6 @@
 #include "Integer.h"
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Complement()
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Complement() const 
 {
     Integer complement;
     complement = *this;
