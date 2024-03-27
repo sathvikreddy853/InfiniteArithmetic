@@ -1,10 +1,15 @@
 # Makefile InfiniteArithmetic
 
-CC = g++ -std=c++17
+SRC_DIR := src 
+OBJ_DIR := object
+CXX := g++
+CXXFLAGS := -std=c++17
 
+SRCS := $(wildcard $(SRC_DIR)/*.cpp)
+ 
 objects := Integer_Construct.o Integer_Add.o Calculator.o Integer_Print.o Integer_Subtract.o Integer_Complement.o Integer_PopZero.cpp
 
-main : $(objects) 
+all : $(objects) 
 	$(CC) -o Calculator $(objects)
 
 Integer_Construct.o : Integer_Construct.cpp 
