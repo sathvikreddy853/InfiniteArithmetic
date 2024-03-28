@@ -3,6 +3,7 @@
 #ifndef INTEGER_H
 #define INTEGER_H
 
+// for testing
 #define LOG(x) std::cout << x << std::endl
 
 #include <iostream>
@@ -15,7 +16,7 @@ namespace InfiniteArithmetic
     {
         private:
 
-            std::vector<int> Array;
+            std::vector<uint8_t> Array;
             size_t Size;
             bool isNegative;
     

@@ -1,39 +1,32 @@
 # Makefile InfiniteArithmetic
 
-SRC_DIR := src 
-OBJ_DIR := object
+TARGET_EXEC := Calculator
+# where the .cpp files are present
+SRC_DIR := ./src
+# where the .h files are present
+INCL_DIR := ./include
+# where the object files go in 
+BUILD_DIR := ./build
+
 CXX := g++
-CXXFLAGS := -std=c++17
+CXXFLAGS := -std=c++17 -I$(INCL_DIR)
 
 SRCS := $(wildcard $(SRC_DIR)/*.cpp)
- 
-objects := Integer_Construct.o Integer_Add.o Calculator.o Integer_Print.o Integer_Subtract.o Integer_Complement.o Integer_PopZero.cpp
+OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
+# OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)					- same output as previous
 
-all : $(objects) 
-	$(CC) -o Calculator $(objects)
+.PHONY : all clean
 
-Integer_Construct.o : Integer_Construct.cpp 
-	$(CC) -c -o $@ $<
+all : $(BUILD_DIR) $(TARGET_EXEC)
 
-Integer_Add.o : Integer_Add.cpp
-	$(CC) -c -o $@ $<
+$(TARGET_EXEC) :  $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET_EXEC)
 
-Integer_Print.o : Integer_Print.cpp
-	$(CC) -c -o $@ $<
+$(BUILD_DIR) : 
+	mkdir build/
 
-Calculator.o : Calculator.cpp
-	$(CC) -c -o $@ $<
-
-Integer_Complement.o : Integer_Complement.cpp
-	$(CC) -c -o $@ $<
-
-Integer_Subtract.o : Integer_Subtract.cpp
-	$(CC) -c -o $@ $<
-
-Integer_PopZero.o : Integer_PopZero.cpp
-	$(CC) -c -o $@ $<
-
-$(objects) : Integer.h
+$(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 clean :
-	rm Calculator $(objects)
+	rm -r $(TARGET_EXEC) $(BUILD_DIR)

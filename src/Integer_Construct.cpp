@@ -18,6 +18,7 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     for(size_t i=0; i<Size; i++)
     {
         Array.push_back((num[num.length()-i-1] - '0'));
+        LOG(num[num.length()-i-1] - '0');
     }
 }
 
