@@ -37,7 +37,7 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
             inOther = false;
     }
 
-    result.Array.push_back(carry);
+    result.Array.push_back(carry);  
     result.PopZero();
 
     return result;

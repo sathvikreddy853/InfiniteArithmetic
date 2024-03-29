@@ -1,10 +1,12 @@
 #include "Integer.h"
 
+// empty constructor
 InfiniteArithmetic::Integer::Integer()
 {
     isNegative = false;
 }
 
+// integer constructor: `string` -> `integer`
 InfiniteArithmetic::Integer::Integer(std::string num)
 {
     if(num[0] == '-')
@@ -32,10 +34,23 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     }
 }
 
+// copy constructor
 InfiniteArithmetic::Integer::Integer(const Integer &obj)
 {
     for(int i : obj.Array)
         Array.push_back(i);
     
     isNegative = obj.isNegative;
+}
+
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator=(const Integer &obj)
+{
+    Array.clear();
+
+    for(int i : obj.Array)
+        Array.push_back(i);
+
+    isNegative = obj.isNegative;
+
+    return *this;
 }

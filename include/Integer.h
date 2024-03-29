@@ -28,6 +28,9 @@ namespace InfiniteArithmetic
             Integer(std::string);            
             Integer(const Integer &);
 
+            // = operator
+            Integer operator=(const Integer &);
+
             // used to `Print` the integer
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Integer &);

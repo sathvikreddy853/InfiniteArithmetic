@@ -15,7 +15,6 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Complement() const
         digit = sum%10;
         *it = digit;
     }
-
-    complement.PopZero();
+    
     return complement;
 }
