@@ -19,8 +19,6 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Complement() const
     }
 
     complement.PopZero();
-    
-    complement.Size = complement.Array.size();
 
     return complement;
 }

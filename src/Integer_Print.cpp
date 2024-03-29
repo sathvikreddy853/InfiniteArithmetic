@@ -2,16 +2,16 @@
 
 void InfiniteArithmetic::Integer::Print()
 {
-    for(size_t i=0; i<Array.size(); i++)
-        std::cout << Array[Array.size()-1-i];
+    for(std::vector<uint16_t>::reverse_iterator it = Array.rbegin(); it<Array.rend(); it++)
+        std::cout << *it;
         
     return;
 }
 
 std::ostream &InfiniteArithmetic::operator<< (std::ostream & output, const InfiniteArithmetic::Integer & num)
 {
-    for(size_t i=0; i<num.Array.size(); i++)
-        output << num.Array[num.Array.size()-1-i];
+    for(std::vector<uint16_t>::const_reverse_iterator it = num.Array.rbegin(); it<num.Array.rend(); it++)
+        output << *it;
 
     return output;
 }

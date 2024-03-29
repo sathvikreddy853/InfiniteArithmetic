@@ -2,11 +2,8 @@
 
 void InfiniteArithmetic::Integer::PopZero()
 {
-    while(Size > 0 && Array[Size - 1] == 0)
-    {
+    while(Array.size() > 0 && Array.back() == 0)
         Array.pop_back();
-        Size -= 1;
-    }
 
     return;
 }

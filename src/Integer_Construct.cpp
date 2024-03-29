@@ -2,7 +2,6 @@
 
 InfiniteArithmetic::Integer::Integer()
 {
-    Size = 0;
     isNegative = false;
 }
 
@@ -11,7 +10,7 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     if(num[0] == '-')
     {
         isNegative = true;
-        Size = num.length() - 1;
+        uint16_t Size = num.length() - 1;
 
         uint16_t carry = 0;
         uint16_t digit = 0;
@@ -27,7 +26,7 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     else
     {
         isNegative = false;
-        Size = num.length();
+        uint16_t Size = num.length();
         for(size_t i=0; i<Size; i++)
             Array.push_back((num[num.length()-i-1] - '0'));
     }
@@ -35,8 +34,6 @@ InfiniteArithmetic::Integer::Integer(std::string num)
 
 InfiniteArithmetic::Integer::Integer(const Integer &obj)
 {
-    Size = obj.Size;
-
     for(int i : obj.Array)
         Array.push_back(i);
     
