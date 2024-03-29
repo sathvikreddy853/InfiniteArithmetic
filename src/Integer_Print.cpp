@@ -2,7 +2,7 @@
 
 void InfiniteArithmetic::Integer::Print()
 {
-    for(std::vector<uint16_t>::reverse_iterator it = Array.rbegin(); it<Array.rend(); it++)
+    for(std::vector<uint16_t>::const_reverse_iterator it = Array.rbegin(); it<Array.rend(); it++)
         std::cout << *it;
         
     return;

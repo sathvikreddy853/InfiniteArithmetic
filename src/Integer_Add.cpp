@@ -6,10 +6,10 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
 
     bool inThis = false, inOther = false;
 
-    if (this->Size > 0)
+    if (this->Array.size() > 0)
         inThis = true;
 
-    if (other.Size > 0)
+    if (other.Array.size() > 0)
         inOther = true;
 
     int carry = 0;
@@ -30,15 +30,14 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
         result.Array.push_back(digit);
 
 
-        if(i == this->Size - 1)
+        if(i == this->Array.size() - 1)
             inThis = false;
         
-        if(i == other.Size - 1)
+        if(i == other.Array.size() - 1)
             inOther = false;
     }
 
     result.Array.push_back(carry);
-    result.Size = result.Array.size();
     result.PopZero();
 
     return result;
