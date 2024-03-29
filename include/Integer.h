@@ -5,6 +5,7 @@
 
 // for testing
 #define LOG(x) std::cout << x << std::endl
+#define HR LOG("------------------------------------------------------")
 
 #include <iostream>
 #include <string>

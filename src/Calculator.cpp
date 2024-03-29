@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Integer.h"
 
-#define HR LOG("------------------------------------------------------")
-
 int main()
 {
     InfiniteArithmetic::Integer num1 ("231");
