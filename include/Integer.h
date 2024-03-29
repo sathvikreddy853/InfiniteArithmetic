@@ -18,7 +18,6 @@ namespace InfiniteArithmetic
         private:
 
             std::vector<uint16_t> Array;
-            size_t Size;
             bool isNegative;
     
         public:

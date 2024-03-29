@@ -2,10 +2,8 @@
 
 void InfiniteArithmetic::Integer::Print()
 {
-    Size = this->Array.size();
-
-    for(size_t i=0; i<Size; i++)
-        std::cout << Array[Size-1-i];
+    for(size_t i=0; i<Array.size(); i++)
+        std::cout << Array[Array.size()-1-i];
         
     return;
 }

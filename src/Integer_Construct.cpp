@@ -18,7 +18,7 @@ InfiniteArithmetic::Integer::Integer(std::string num)
 
         for(size_t i=0; i<Size; i++)
         {
-            uint16_t sum = '9' - num[num.length()-i-1] + (i==0) + carry;
+            uint16_t sum = '9' - num[Size-i] + (i==0) + carry;
             carry = sum/10;
             digit = sum%10;
             Array.push_back(digit);
