@@ -17,11 +17,24 @@ Note: Provision can be added to add and sub
 
 | Functions | Purpose | 
 | --------- | --------- |
-| Add | adds two numbers together | 
-| Subtract | subtracts one number from the other | 
-| Multiply | multiplies two numbers | 
-| Divide | divides two numbers |
+| Print | Displays the number |
+| Assign | Used to assign the object to another value |
+| Add | Adds two numbers together | 
+| Subtract | Subtracts one number from the other | 
+| Multiply | Multiplies two numbers | 
+| Divide | Divides two numbers | 
 | Complement | Takes the complement of given number | 
+| PopZero | Removes redundant zeroes from the number | 
+| MatchDigits | Matches the digits of two numbers such that they are equal |
+
+| Operators | Purpose |
+| --------- | ------- |
+| operator<< | Used to display the number (output the number) |
+| operator= | Used to assign the object to another value | 
+| operator+ | Adds two numbers |
+| operator– | Subtracts one number from the other |
+| operator* | Multiplies two numbers |
+| operator/ | Divides one number by the other |
 
 ## Float
 And here are the directions to use `Float.h`
