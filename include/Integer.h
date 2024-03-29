@@ -16,7 +16,7 @@ namespace InfiniteArithmetic
     {
         private:
 
-            std::vector<uint8_t> Array;
+            std::vector<uint16_t> Array;
             size_t Size;
             bool isNegative;
     
@@ -34,8 +34,11 @@ namespace InfiniteArithmetic
 
             // static size_t RegisterSize(const Integer &, const Integer &);
 
+            static void MatchDigits(Integer &, Integer &);
+
             Integer Complement() const;
             void PopZero();
+            int16_t Compare(const Integer &);
 
             Integer Add(const Integer &);
             Integer Subtract(const Integer &);
