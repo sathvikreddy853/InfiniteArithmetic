@@ -28,6 +28,6 @@ def Verify():
 
 
 if __name__ == "__main__":
-    CheckInput('./utils/Addition_Input.in')
+    CheckInput('./utils/Integer_Input.in')
     CheckOutput('./utils/Addition_Output.out')
     Verify()
