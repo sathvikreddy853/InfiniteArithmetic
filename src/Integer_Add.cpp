@@ -1,16 +1,12 @@
 #include "Integer.h"
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &other)
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer other)
 {
     Integer result;
 
-    bool inThis = false, inOther = false;
+    MatchDigits(*this, other);
 
-    if (this->Array.size() > 0)
-        inThis = true;
-
-    if (other.Array.size() > 0)
-        inOther = true;
+    bool inThis = true, inOther = true;
 
     int carry = 0;
     int digit = 0;
@@ -37,8 +33,19 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(const Integer &othe
             inOther = false;
     }
 
-    result.Array.push_back(carry);  
-    result.PopZero();
+    if (carry > 0)
+        result.Array.push_back(carry);  
+
+    result.Array.pop_back();
+
+    if(result.Array.back() == 9)
+        result.isNegative = true;
+
+    // HR; 
+    // this->Print(); 
+    // other.Print();
+    // result.Print();
+    // HR;
 
     return result;
 }

@@ -43,10 +43,10 @@ namespace InfiniteArithmetic
             void PopZero();
             int16_t Compare(const Integer &);
 
-            Integer Add(const Integer &);
-            Integer Subtract(const Integer &);
-            Integer Multiply(const Integer &);
-            Integer Divide(const Integer &);
+            Integer Add(Integer);
+            Integer Subtract(Integer);
+            Integer Multiply(Integer);
+            Integer Divide(Integer);
     };
 }
 

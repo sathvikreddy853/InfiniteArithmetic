@@ -13,7 +13,7 @@ Simply include the files by using `#include "Integer.h"` or `#include "Float.h"`
 ## Integer
 Here's a briefing of the utilities in `Integer.h`
 
-Note: Provision can be added to add and sub
+<!-- Note: Provision can be added to add and sub -->
 
 | Functions | Purpose | 
 | --------- | --------- |

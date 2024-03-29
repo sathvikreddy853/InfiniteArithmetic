@@ -1,6 +1,6 @@
 #include "Integer.h"
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Subtract(const Integer & other)
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Subtract(Integer other)
 {
     Integer result;
 

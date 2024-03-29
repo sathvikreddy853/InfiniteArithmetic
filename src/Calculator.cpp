@@ -3,13 +3,12 @@
 
 int main()
 {
-    InfiniteArithmetic::Integer num1 ("231");
-    InfiniteArithmetic::Integer num2 ("-9923");
+    InfiniteArithmetic::Integer num1 ("999999098428934728931");
+    InfiniteArithmetic::Integer num2 ("-999992443124343129923");
 
-    InfiniteArithmetic::Integer::MatchDigits(num1, num2);
+    InfiniteArithmetic::Integer result = num1.Add(num2);
 
-    LOG(num1);
-    LOG(num2);
+    LOG(result);
 
     return 0;
 }

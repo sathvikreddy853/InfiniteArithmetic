@@ -2,12 +2,13 @@
 
 void InfiniteArithmetic::Integer::Print()
 {
-    if(this->isNegative)
-        std::cout << '-';
+    // if(this->isNegative)
+        // std::cout << '-';
 
     for(std::vector<uint16_t>::const_reverse_iterator it = Array.rbegin(); it<Array.rend(); it++)
         std::cout << *it;
         
+    std::cout << std::endl;
     return;
 }
 
