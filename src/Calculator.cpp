@@ -3,34 +3,35 @@
 
 int main()
 {
-    std::string str1;
-    std::string str2;
 
 ///////////////////////////////////////////////////////////////////////////////
 
     // testing code 
 
-    // uint64_t test_cases;
-    // std::cin >> test_cases;
+    std::string str1;
+    std::string str2;
 
-    // for(uint64_t test_case=0; test_case<test_cases; test_case++)
-    // {
-    //     std::cin >> str1 >> str2;
+    uint64_t test_cases;
+    std::cin >> test_cases;
 
-    //     InfiniteArithmetic::Integer num1 (str1);
-    //     InfiniteArithmetic::Integer num2 (str2);
+    for(uint64_t test_case=0; test_case<test_cases; test_case++)
+    {
+        std::cin >> str1 >> str2;
 
-    //     // change the function here
-    //     InfiniteArithmetic::Integer result = num1.Add(num2);
+        InfiniteArithmetic::Integer num1 (str1);
+        InfiniteArithmetic::Integer num2 (str2);
 
-    //     LOG(result);
-    // }
+        // change the function here
+        InfiniteArithmetic::Integer result = num1.Multiply(num2);
+
+        LOG(result);
+    }
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    InfiniteArithmetic::Integer number1 ("-1462");
+    // InfiniteArithmetic::Integer number1 ("-1462");
 
-    LOG(number1.Multiply(InfiniteArithmetic::Integer("-273")));
+    // LOG(number1.Multiply(InfiniteArithmetic::Integer("-273")));
     // LOG(number1.Complement());
 
     return 0;
