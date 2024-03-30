@@ -24,7 +24,8 @@ def Verify():
             # print(f"Line {index + 1}: True")
             pass
         else:
-            print(f"Line {index + 1}: False")
+            raise Exception(f"Line {index + 1}: Value Not Matching")
+            # print(f"Line {index + 1}: False")
 
 
 if __name__ == "__main__":

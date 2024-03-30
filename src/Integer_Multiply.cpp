@@ -36,6 +36,7 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Multiply(Integer otherO
 
     {
         using iter = std::vector<uint16_t>::const_iterator;
+        
         for(iter thisElem = thisOne.Array.begin(); thisElem < thisOne.Array.end(); thisElem++, shift++)
         {
             carry = 0;

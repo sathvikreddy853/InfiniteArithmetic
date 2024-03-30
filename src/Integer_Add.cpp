@@ -1,10 +1,12 @@
 #include "Integer.h"
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer other)
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
 {
     Integer result;
 
-    MatchDigits(*this, other);
+    Integer thisOne = *this;
+
+    MatchDigits(thisOne, otherOne);
 
     bool inThis = true, inOther = true;
 
@@ -17,19 +19,19 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer other)
         // to calculate sum of digits and carry
         sum = carry; 
         if (inThis)
-            sum += this->Array[i];
+            sum += thisOne.Array[i];
         if (inOther)
-            sum += other.Array[i];
+            sum += otherOne.Array[i];
 
         digit = sum%10;
         carry = sum/10;
         result.Array.push_back(digit);
 
 
-        if(i == this->Array.size() - 1)
+        if(i == thisOne.Array.size() - 1)
             inThis = false;
         
-        if(i == other.Array.size() - 1)
+        if(i == otherOne.Array.size() - 1)
             inOther = false;
     }
 
@@ -42,8 +44,8 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer other)
         result.isNegative = true;
 
     // HR; 
-    // this->Print(); 
-    // other.Print();
+    // thisOne.Print(); 
+    // otherOne.Print();
     // result.Print();
     // HR;
 

@@ -22,7 +22,7 @@ int main()
         InfiniteArithmetic::Integer num2 (str2);
 
         // change the function here
-        InfiniteArithmetic::Integer result = num1.Multiply(num2);
+        InfiniteArithmetic::Integer result = num1.Add(num2);
 
         LOG(result);
     }
