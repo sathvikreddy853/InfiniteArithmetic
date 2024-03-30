@@ -2,7 +2,7 @@
 
 This library is made to accomodate numbers of infinite length. 
 
-It can do all of the regular operations like add, subtract, multiply, divide and mod.
+It can perform all of the regular operations like add, subtract, multiply, divide and mod.
 
 #### Using The Library
 
@@ -15,6 +15,7 @@ Here's a briefing of the utilities in `Integer.h`
 
 <!-- Note: Provision can be added to add and sub -->
 
+#### Class Methods
 | Functions | Purpose | 
 | --------- | --------- |
 | Print | Displays the number |
@@ -27,6 +28,7 @@ Here's a briefing of the utilities in `Integer.h`
 | PopZero | Removes redundant zeroes from the number | 
 | MatchDigits | Matches the digits of two numbers such that they are equal |
 
+#### Class Operators
 | Operators | Purpose |
 | --------- | ------- |
 | operator<< | Used to display the number (output the number) |
