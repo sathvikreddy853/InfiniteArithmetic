@@ -4,6 +4,8 @@ This library is made to accomodate numbers of infinite length.
 
 It can perform all of the regular operations like add, subtract, multiply, divide and mod.
 
+The library has been tested using python scripts which can be found in the utils/ folder
+
 #### Using The Library
 
 The library contains two header files - one for integers and the other for floating point numbers.
@@ -28,6 +30,8 @@ Here's a briefing of the utilities in `Integer.h`
 | PopZero | Removes redundant zeroes from the number | 
 | MatchDigits | Matches the digits of two numbers such that they are equal |
 
+Note: All the operators have defined in terms of the class methods
+
 #### Class Operators
 | Operators | Purpose |
 | --------- | ------- |
@@ -37,6 +41,8 @@ Here's a briefing of the utilities in `Integer.h`
 | operator– | Subtracts one number from the other |
 | operator* | Multiplies two numbers |
 | operator/ | Divides one number by the other |
+| operator% | Takes the mod of one number w.r.t the other |
+| operator~ | Takes the complement of the number | 
 
 ## Float
 And here are the directions to use `Float.h`
