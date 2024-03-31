@@ -43,14 +43,19 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
         }
 
         result.Array.insert(result.Array.begin(), multiplier - 1);
-        dividend = dividend.Subtract(divisor.MultiplyByDigit(multiplier - 1));
+
+        if (multiplier > 1)
+            dividend = dividend.Subtract(divisor.MultiplyByDigit(multiplier - 1));
 
         divisor.Array.erase(divisor.Array.begin());
     }
     
 
     if(result.isNegative)
+    {
+        result.Add(Integer("1"));
         result = result.Complement();
+    }
 
     return result;
 }
