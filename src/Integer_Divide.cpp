@@ -32,9 +32,6 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
     else
         divisor.Array.insert(divisor.Array.begin(), dividendSize-divisorSize, 0);
 
-        divisor.Print();
-        dividend.Print();
-
     uint16_t multiplier;
 
     for(size_t i=0; i<dividendSize-divisorSize+1; i++)
@@ -45,15 +42,15 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
                 break;   
         }
 
-        dividend.Subtract(divisor.MultiplyByDigit(multiplier - 1));
+        result.Array.insert(result.Array.begin(), multiplier - 1);
+        dividend = dividend.Subtract(divisor.MultiplyByDigit(multiplier - 1));
 
         divisor.Array.erase(divisor.Array.begin());
-        divisor.Print();
     }
     
 
-    // if(result.isNegative)
-        // result = result.Complement();
+    if(result.isNegative)
+        result = result.Complement();
 
     return result;
 }

@@ -30,16 +30,18 @@ int main()
 ///////////////////////////////////////////////////////////////////////////////
 
     InfiniteArithmetic::Integer number1 ("9932");
-    std::string string2 = "9932";
-    InfiniteArithmetic::Integer number2 (string2);
-    string2.insert(string2.begin(), '-');
-    InfiniteArithmetic::Integer number3 (string2);
+    // std::string string2 = "9932";
+    InfiniteArithmetic::Integer number2 ("72111");
+    // string2.insert(string2.begin(), '-');
+    // InfiniteArithmetic::Integer number3 (string2);
 
     number1.Print();
     number2.Print();
 
-    number1.Subtract(number2).Print();
-    number1.Add(number3).Print();
+    LOG(number1.Divide(number2));
+
+    // number1.Subtract(number2).Print();
+    // number1.Add(number3).Print();
 
     // LOG(number1.MultiplyByDigit(9));
     // LOG(number1.Complement());
