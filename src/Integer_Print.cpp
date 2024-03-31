@@ -14,7 +14,7 @@ void InfiniteArithmetic::Integer::Print()
 
 std::ostream &InfiniteArithmetic::operator<< (std::ostream & output, const InfiniteArithmetic::Integer & num)
 {
-    bool showZero = true;
+    bool showZero = false;
 
     Integer printable; 
 
@@ -30,10 +30,13 @@ std::ostream &InfiniteArithmetic::operator<< (std::ostream & output, const Infin
 
     for(std::vector<uint16_t>::const_reverse_iterator it = printable.Array.rbegin(); it<printable.Array.rend(); it++)
     {
-        if (showZero && *it == 0)   continue;
-        showZero = false;
+        if (!showZero && *it == 0)   continue;
+        showZero = true;
         output << *it;
     }
+
+    if (!showZero)
+        output << 0;
 
     return output;
 }
