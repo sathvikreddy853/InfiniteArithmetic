@@ -15,8 +15,6 @@ Simply include the files by using `#include "Integer.h"` or `#include "Float.h"`
 ## Integer
 Here's a briefing of the utilities in `Integer.h`
 
-<!-- Note: Provision can be added to add and sub -->
-
 #### Class Methods
 | Functions | Purpose | 
 | --------- | --------- |
@@ -30,8 +28,6 @@ Here's a briefing of the utilities in `Integer.h`
 | PopZero | Removes redundant zeroes from the number | 
 | MatchDigits | Matches the digits of two numbers such that they are equal |
 
-Note: All the operators have defined in terms of the class methods
-
 #### Class Operators
 | Operators | Purpose |
 | --------- | ------- |
@@ -43,6 +39,9 @@ Note: All the operators have defined in terms of the class methods
 | operator/ | Divides one number by the other |
 | operator% | Takes the mod of one number w.r.t the other |
 | operator~ | Takes the complement of the number | 
+
+Note: All the operators have been defined in terms of the class methods
+
 
 ## Float
 And here are the directions to use `Float.h`

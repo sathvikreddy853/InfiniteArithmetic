@@ -1,7 +1,7 @@
 from random import randint
 
 def RandomInteger():
-    max_range = 99999999999999999999999999999999999999999999999
+    max_range = 10000000000000000000000000000000000000000000000000
 
     num1 = randint(-max_range, max_range)
     num2 = randint(-max_range, max_range)

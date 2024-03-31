@@ -38,15 +38,26 @@ namespace InfiniteArithmetic
             // static size_t RegisterSize(const Integer &, const Integer &);
 
             static void MatchDigits(Integer &, Integer &);
+            int16_t Compare(const Integer &);
 
             Integer Complement() const;
             void PopZero();
-            int16_t Compare(const Integer &);
 
             Integer Add(Integer);
             Integer Subtract(Integer);
             Integer Multiply(Integer);
+            Integer MultiplyByDigit(uint16_t);
             Integer Divide(Integer);
+            Integer Mod(Integer);
+
+            Integer operator+(const Integer &);
+            Integer operator-(const Integer &);
+            Integer operator*(const Integer &);
+            Integer operator/(const Integer &);
+            Integer operator%(const Integer &);
+            Integer operator~();
+            // Integer operator>>(size_t);
+            // Integer operator<<(size_t);
     };
 }
 

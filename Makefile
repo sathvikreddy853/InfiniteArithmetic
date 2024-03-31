@@ -20,7 +20,8 @@ OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 all : $(BUILD_DIR) $(TARGET_EXEC)
 
 $(TARGET_EXEC) :  $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET_EXEC)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET_EXEC)
+	@echo "Building Calculator"
 
 $(BUILD_DIR) : 
 	mkdir build/

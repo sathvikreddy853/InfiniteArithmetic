@@ -35,19 +35,14 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
             inOther = false;
     }
 
-    if (carry > 0)
-        result.Array.push_back(carry);  
-
     result.Array.pop_back();
 
     if(result.Array.back() == 9)
         result.isNegative = true;
 
-    // HR; 
     // thisOne.Print(); 
     // otherOne.Print();
     // result.Print();
-    // HR;
 
     return result;
 }
