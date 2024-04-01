@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Integer.h"
+// #include "Integer.h"
+#include "Float.h"
 
 int main()
 {
@@ -29,13 +30,19 @@ int main()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    InfiniteArithmetic::Integer number1 ("25");
-    InfiniteArithmetic::Integer number2 ("-25");
+    // InfiniteArithmetic::Integer number1 ("8093247819237489123");
+    // InfiniteArithmetic::Integer number2 ("49180348170349287809");
 
-    LOG(number1.Add(number2).isZero());
+    // LOG(number1.Multiply(number2));
 
     // for(InfiniteArithmetic::Integer i ("0"); i.Compare(InfiniteArithmetic::Integer("12")) < 0 ; i = i.Add(InfiniteArithmetic::Integer("1")))
         // LOG(i);
+
+
+    InfiniteArithmetic::Float number1 ("7342.783");
+    InfiniteArithmetic::Float number2 ("456.890");
+
+    number1.Add(number2).Print();
 
     return 0;
 }

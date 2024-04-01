@@ -10,9 +10,9 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
 
     bool inThis = true, inOther = true;
 
-    int carry = 0;
-    int digit = 0;
-    int sum = 0;
+    uint16_t carry = 0;
+    uint16_t digit = 0;
+    uint16_t sum = 0;
 
     for(size_t i = 0; inThis || inOther; i++)
     {

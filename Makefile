@@ -26,7 +26,7 @@ $(TARGET_EXEC) :  $(OBJS)
 $(BUILD_DIR) : 
 	mkdir build/
 
-$(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp $(INCL_DIR)/Integer.h
+$(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp $(INCL_DIR)/Integer.h $(INCL_DIR)/Float.h
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 run : 

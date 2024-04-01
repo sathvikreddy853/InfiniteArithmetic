@@ -12,7 +12,7 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     if(num[0] == '-')
     {
         isNegative = true;
-        uint16_t Size = num.length() - 1;
+        size_t Size = num.length() - 1;
 
         uint16_t carry = 0;
         uint16_t digit = 0;
@@ -28,9 +28,9 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     else
     {
         isNegative = false;
-        uint16_t Size = num.length();
+        size_t Size = num.length();
         for(size_t i=0; i<Size; i++)
-            Array.push_back((num[num.length()-i-1] - '0'));
+            Array.push_back((num[Size-i-1] - '0'));
     }
 
     while(!isNegative && !Array.empty() && Array.back() == 0)
