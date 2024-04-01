@@ -5,8 +5,8 @@ def RandomInteger():
     max_range2 = 100000000000000000000000000000000000000000000
 
 
-    num1 = randint(0, max_range1)
-    num2 = randint(0, max_range2)
+    num1 = randint(-max_range1, max_range1)
+    num2 = randint(-max_range2, max_range2)
 
     return (num1, num2)
 

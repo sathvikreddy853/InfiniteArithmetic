@@ -20,7 +20,9 @@ def CheckOutput(outputFile):
 
 def Verify():
     for index, tuple in enumerate(input_numbers):
-        if tuple[0] // tuple[1] == output_numbers[index]:
+        result = tuple[0] // tuple[1] 
+        result += 1 if result < 0 else 0
+        if result == output_numbers[index]:
             # print(f"Line {index + 1}: True")
             pass
         else:
