@@ -29,13 +29,13 @@ int main()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    InfiniteArithmetic::Integer number1 ("-25");
-    InfiniteArithmetic::Integer number2 ("6");
+    InfiniteArithmetic::Integer number1 ("25");
+    InfiniteArithmetic::Integer number2 ("-25");
 
-    LOG(number1.Divide(number2));
+    LOG(number1.Add(number2).isZero());
 
-    for(InfiniteArithmetic::Integer i ("0"); i.Compare(InfiniteArithmetic::Integer("12")) < 0 ; i = i.Add(InfiniteArithmetic::Integer("1")))
-        LOG(i);
+    // for(InfiniteArithmetic::Integer i ("0"); i.Compare(InfiniteArithmetic::Integer("12")) < 0 ; i = i.Add(InfiniteArithmetic::Integer("1")))
+        // LOG(i);
 
     return 0;
 }

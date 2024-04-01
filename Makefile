@@ -31,6 +31,7 @@ $(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp $(INCL_DIR)/Integer.h
 
 run : 
 	./$(TARGET_EXEC)
+	@echo "Running Calculator"
 
 clean :
 	rm -r $(TARGET_EXEC) $(BUILD_DIR)

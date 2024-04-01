@@ -44,7 +44,7 @@ namespace InfiniteArithmetic
             Integer Complement() const;
 
             void PopZero();
-            bool isZero();
+            bool isZero() const;
 
             // operations
             Integer Add(Integer);

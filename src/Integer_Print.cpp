@@ -20,7 +20,8 @@ std::ostream &InfiniteArithmetic::operator<< (std::ostream & output, const Infin
 
     if(num.isNegative)
     {
-        output << '-';
+        if(!num.isZero())
+            output << '-';
         printable = num.Complement();
     }
     else
