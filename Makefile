@@ -15,7 +15,7 @@ SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 # OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)					- same output as previous
 
-.PHONY : all clean
+.PHONY : all run clean
 
 all : $(BUILD_DIR) $(TARGET_EXEC)
 
@@ -28,6 +28,9 @@ $(BUILD_DIR) :
 
 $(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp $(INCL_DIR)/Integer.h
 	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+run : 
+	./$(TARGET_EXEC)
 
 clean :
 	rm -r $(TARGET_EXEC) $(BUILD_DIR)

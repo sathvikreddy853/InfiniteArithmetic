@@ -40,9 +40,13 @@ namespace InfiniteArithmetic
             static void MatchDigits(Integer &, Integer &);
             int16_t Compare(const Integer &);
 
+            // takes the complement of the number with respect to 9
             Integer Complement() const;
-            void PopZero();
 
+            void PopZero();
+            bool isZero();
+
+            // operations
             Integer Add(Integer);
             Integer Subtract(Integer);
             Integer Multiply(Integer);

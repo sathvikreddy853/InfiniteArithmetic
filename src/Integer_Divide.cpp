@@ -52,10 +52,7 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
     
 
     if(result.isNegative)
-    {
-        result.Add(Integer("1"));
         result = result.Complement();
-    }
 
     return result;
 }
