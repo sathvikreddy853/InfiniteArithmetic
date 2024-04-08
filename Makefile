@@ -7,18 +7,30 @@ SRC_DIR := ./src
 INCL_DIR := ./include
 # where the object files go in 
 BUILD_DIR := ./build
+# where testing scripts are kept
+UTILS_DIR := ./utils
 
 CXX := g++
-CXXFLAGS := -std=c++17 -I$(INCL_DIR)
+CXXFLAGS := -Wall -Wextra -std=c++17 -I$(INCL_DIR)
 
 SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 # OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)					- same output as previous
+TEST_FILES := $(wildcard $(UTILS_DIR)/*.out) $(wildcard $(UTILS_DIR)/*.in)
+
+UTILS_GEN_FILES := $(wildcard $(UTILS_DIR)/*_Generation.py)
+
+GEN_FILES := $(patsubst $(UTILS_DIR)/%.py, %.py, $(UTILS_GEN_FILES))
+CHECK_FILES := $(wildcard $(UTILS_DIR)/*_Cheker.py)
 
 .PHONY : all run clean
 
+# all1 : 
+#	@echo $(TEST_FILES)
+
 all : $(BUILD_DIR) $(TARGET_EXEC)
 
+# build executable
 $(TARGET_EXEC) :  $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET_EXEC)
 	@echo "Building Calculator"
@@ -26,12 +38,32 @@ $(TARGET_EXEC) :  $(OBJS)
 $(BUILD_DIR) : 
 	mkdir build/
 
-$(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp $(INCL_DIR)/Integer.h $(INCL_DIR)/Float.h
+# for building Integer files
+$(BUILD_DIR)/Integer_%.o : $(SRC_DIR)/Integer_%.cpp $(INCL_DIR)/Integer.h
 	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+# for building Float files
+$(BUILD_DIR)/Float_%.o : $(SRC_DIR)/Float_%.cpp $(INCL_DIR)/Float.h
+	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+# for building Caculator
+$(BUILD_DIR)/$(TARGET_EXEC).o : $(SRC_DIR)/$(TARGET_EXEC).cpp $(INCL_DIR)/Integer.h $(INCL_DIR)/Float.h
+	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+generate : $(GEN_FILES) 
+	@echo "Generating Test Cases"
+
+# for generating test files
+%_Generation.py: 
+	python3 -u $(UTILS_DIR)/$@
+
+# for verifying test files
+verify :
+#	python3 -u 
 
 run : 
 	./$(TARGET_EXEC)
 	@echo "Running Calculator"
 
 clean :
-	rm -r $(TARGET_EXEC) $(BUILD_DIR)
+	rm -r $(TARGET_EXEC) $(BUILD_DIR) $(OUT)

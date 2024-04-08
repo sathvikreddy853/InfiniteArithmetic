@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Integer.h"
-// #include "Float.h"
+// #include "Integer.h"
+#include "Float.h"
 
 int main()
 {
@@ -9,24 +9,24 @@ int main()
 
     // testing code 
 
-    std::string str1;
-    std::string str2;
+    // std::string str1;
+    // std::string str2;
 
-    uint64_t test_cases;
-    std::cin >> test_cases;
+    // uint64_t test_cases;
+    // std::cin >> test_cases;
 
-    for(uint64_t test_case=0; test_case<test_cases; test_case++)
-    {
-        std::cin >> str1 >> str2;
+    // for(uint64_t test_case=0; test_case<test_cases; test_case++)
+    // {
+    //     std::cin >> str1 >> str2;
 
-        InfiniteArithmetic::Integer num1 (str1);
-        InfiniteArithmetic::Integer num2 (str2);
+    //     InfiniteArithmetic::Integer num1 (str1);
+    //     InfiniteArithmetic::Integer num2 (str2);
 
-        // change the function here
-        InfiniteArithmetic::Integer result = num1.Divide(num2);
+    //     // change the function here
+    //     InfiniteArithmetic::Integer result = num1.Divide(num2);
 
-        LOG(result);
-    }
+    //     LOG(result);
+    // }
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -39,10 +39,10 @@ int main()
         // LOG(i);
 
 
-    // InfiniteArithmetic::Float number1 ("7342.783");
-    // InfiniteArithmetic::Float number2 ("456.890");
+    InfiniteArithmetic::Float number1 ("7342.783");
+    InfiniteArithmetic::Float number2 ("456.89");
 
-    // number1.Add(number2).Print();
+    number1.Add(number2).Print();
 
     return 0;
 }
