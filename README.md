@@ -18,15 +18,17 @@ Here's a briefing of the utilities in `Integer.h`
 #### Class Methods
 | Functions | Purpose | 
 | --------- | --------- |
-| Print | Displays the number |
 | Assign | Used to assign the object to another value |
 | Add | Adds two numbers together | 
 | Subtract | Subtracts one number from the other | 
 | Multiply | Multiplies two numbers | 
 | Divide | Divides two numbers | 
+| Mod | Returns the remainder |
 | Complement | Takes the complement of given number | 
-| PopZero | Removes redundant zeroes from the number | 
 | MatchDigits | Matches the digits of two numbers such that they are equal |
+| PopZero | Removes redundant zeroes from the number | 
+| Print | Displays the number |
+| isZero | Tells if the number is zero or not | 
 
 #### Class Operators
 | Operators | Purpose |
@@ -45,3 +47,18 @@ Note: All the operators have been defined in terms of the class methods
 
 ## Float
 And here are the directions to use `Float.h`
+
+#### Class Methods
+| Functions | Purpose | 
+| --------- | --------- |
+| Assign | Used to assign the object to another value |
+| Add | Adds two numbers together | 
+| Subtract | Subtracts one number from the other | 
+| Multiply | Multiplies two numbers | 
+| Divide | Divides two numbers | 
+| Mod | Returns the remainder |
+| Complement | Takes the complement of given number | 
+| MatchDigits | Matches the digits of two numbers such that they are equal |
+| PopZero | Removes redundant zeroes from the number | 
+| Print | Displays the number |
+| isZero | Tells if the number is zero or not |
