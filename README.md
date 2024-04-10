@@ -12,8 +12,24 @@ The library contains two header files - one for integers and the other for float
 
 Simply include the files by using `#include "Integer.h"` or `#include "Float.h"` or both depending on your requirement.
 
+### Cloning The Repository
+```
+git clone <replace-with-repository-name>
+```
+
+### Building The Executable 
+```
+make all 
+```
+
+### Building A Library
+```
+make inf-lib
+```
+
 ## Integer
 Here's a briefing of the utilities in `Integer.h`
+
 
 #### Class Methods
 | Functions | Purpose | 
