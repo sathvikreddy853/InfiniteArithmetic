@@ -23,7 +23,7 @@ UTILS_GEN_FILES := $(wildcard $(UTILS_DIR)/*_Generation.py)
 GEN_FILES := $(patsubst $(UTILS_DIR)/%.py, %.py, $(UTILS_GEN_FILES))
 CHECK_FILES := $(wildcard $(UTILS_DIR)/*_Cheker.py)
 
-.PHONY : all run clean
+.PHONY : all run lib-inf clean 
 
 # all1 : 
 #	@echo $(TEST_FILES)
@@ -54,16 +54,19 @@ generate : $(GEN_FILES)
 	@echo "Generating Test Cases"
 
 # for generating test files
-%_Generation.py: 
-	python3 -u $(UTILS_DIR)/$@
+# %_Generation.py: 
+#	python3 -u $(UTILS_DIR)/$@
 
-# for verifying test files
-verify :
-#	python3 -u 
+lib-inf: $(BUILD_DIR) $(OBJS)
+	@ar rcs $@.a $(OBJS)
+	@echo "Building Library!"
 
 run : 
 	./$(TARGET_EXEC)
 	@echo "Running Calculator"
 
 clean :
-	rm -r $(TARGET_EXEC) $(BUILD_DIR) $(OUT)
+	@rm -r $(BUILD_DIR) 
+	@rm $(TARGET_EXEC)
+	@rm $(OUT)
+	@echo "Clearing All Files!"

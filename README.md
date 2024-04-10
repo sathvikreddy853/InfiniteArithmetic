@@ -18,13 +18,21 @@ git clone <replace-with-repository-name>
 ```
 
 ### Building The Executable 
+To build the executable 
 ```
 make all 
 ```
 
 ### Building A Library
+You can build a library and link it to a C or C++ code that you are building.  
+Build it using the following command
 ```
 make inf-lib
+```
+Just include the header files in your project directory and link the library using the following command:
+
+```
+g++ <your-file-here>.cpp -llib-inf -o <executable>
 ```
 
 ## Integer
