@@ -1,38 +1,34 @@
 #include "Float.h"
 
 // empty constructor
-InfiniteArithmetic::Float::Float() : isNegative(false), PointPosition(-1)
+InfiniteArithmetic::Float::Float():  PointPosition(-1), isNegative(false)
 {
 }
 
-InfiniteArithmetic::Float::Float(std::string num)
+InfiniteArithmetic::Float::Float(std::string num):  PointPosition(-1), isNegative(false)
 {
-    PointPosition = -1;
-    
-    // if (num[0] == '-')
-    // {
-    //     isNegative  = true;
-    //     size_t Size = num.length() - 1;
+    if (num[0] == '-')
+    {
+        isNegative  = true;
+        size_t Size = num.length() - 1;
 
-    //     uint16_t carry = 0;
-    //     uint16_t digit = 0;
+        uint16_t carry = 0;
+        uint16_t digit = 0;
 
-    //     for(size_t i=0; i<Size; i++)
-    //     {
-    //         if(num[Size-i] == '.')
-    //         {
-
-    //         }
-    //         else
-    //         {
-    //             uint16_t sum = '9' - num[Size-i] + (i==0) + carry;
-    //             carry = sum/10;
-    //             digit = sum%10;
-    //             Array.push_back(digit);
-    //         }
-    //     }
-    // }
-    // else
+        for(size_t i=0; i<Size; i++)
+        {
+            if(num[Size-i] == '.')
+                PointPosition = i+1;
+            else
+            {
+                uint16_t sum = '9' - num[Size-i] + (i==0) + carry;
+                carry = sum/10;
+                digit = sum%10;
+                Array.push_back(digit);
+            }
+        }
+    }
+    else
     {
         isNegative = false;
         size_t Size = num.length();
