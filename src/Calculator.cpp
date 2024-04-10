@@ -39,8 +39,8 @@ int main()
         // LOG(i);
 
 
-    InfiniteArithmetic::Float number1 ("7342.783");
-    InfiniteArithmetic::Float number2 ("456.89");
+    InfiniteArithmetic::Float number1 ("-7342.783");
+    InfiniteArithmetic::Float number2 ("-456.89");
 
     number1.Add(number2).Print();
 

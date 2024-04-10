@@ -1,6 +1,6 @@
 #include "Float.h"
 
-InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(const Float &otherOne)
+InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
 {
     Float result;
     bool inThis = true, inOther = true;
@@ -10,6 +10,8 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(const Float &otherOne)
     
     if(this->PointPosition < otherOne.PointPosition)
         inThis = false;
+
+    MatchDigits(*this, otherOne);
 
     size_t shift = this->PointPosition - otherOne.PointPosition;
 
@@ -46,6 +48,11 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(const Float &otherOne)
         if(otherIndex == otherOne.Array.size() - 1)
             inOther = false;
     }
+
+    result.Array.pop_back();
+
+    if(result.Array.back() == 9)
+        result.isNegative = true;
 
     // match digits part
     // std::vector<int> = 

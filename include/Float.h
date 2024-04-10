@@ -27,7 +27,7 @@ namespace InfiniteArithmetic
 
             Float();
             Float(std::string);
-            Float(const Float &);
+            // Float(const Float &);
 
             Float operator=(const Float &);
 
@@ -36,7 +36,7 @@ namespace InfiniteArithmetic
             void Print();
             friend std::ostream operator<< (std::ostream &, const Float &);
 
-            Float Add(const Float &);
+            Float Add(Float);
     };
 
 }
