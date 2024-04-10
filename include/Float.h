@@ -31,6 +31,8 @@ namespace InfiniteArithmetic
 
             Float operator=(const Float &);
 
+            static void MatchDigits(Float &, Float &);
+
             void Print();
             friend std::ostream operator<< (std::ostream &, const Float &);
 
