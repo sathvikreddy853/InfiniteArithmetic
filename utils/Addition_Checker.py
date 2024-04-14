@@ -1,3 +1,11 @@
+# utils/Addition_Checker.py
+
+# run the Calc using:
+#       time ./Calculator < utils/Integer_Input.in > utils/Addition_Output.out                                               
+
+# run the checker using: 
+#       python utils/Addition_Checker.py
+
 input_numbers = []
 output_numbers = []
 

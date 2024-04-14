@@ -29,7 +29,7 @@ namespace InfiniteArithmetic
             Integer(const Integer &);
 
             // = operator
-            Integer operator=(const Integer &);
+            Integer &operator=(const Integer &);
 
             // used to `Print` the integer
             void Print();
@@ -48,6 +48,8 @@ namespace InfiniteArithmetic
 
             // operations
             Integer Add(Integer);
+            Integer &Add2(Integer &);
+
             Integer Subtract(Integer);
             Integer Multiply(Integer);
             Integer MultiplyByDigit(uint16_t);
