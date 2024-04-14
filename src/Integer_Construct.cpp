@@ -49,7 +49,7 @@ InfiniteArithmetic::Integer::Integer(const Integer &obj)
     isNegative = obj.isNegative;
 }
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator=(const Integer &obj)
+InfiniteArithmetic::Integer &InfiniteArithmetic::Integer::operator=(const Integer &obj)
 {
     Array.clear();
 

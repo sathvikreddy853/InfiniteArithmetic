@@ -1,3 +1,5 @@
 /.vscode/
 /InfiniteArithmetic.code-workspace
 .DS_store
+/build/
+/Calculator

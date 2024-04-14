@@ -27,16 +27,21 @@ namespace InfiniteArithmetic
 
             Float();
             Float(std::string);
-            // Float(const Float &);
+            Float(const Float &);
 
-            Float operator=(const Float &);
+            Float &operator=(const Float &);
 
             static void MatchDigits(Float &, Float &);
 
+            // bool isZero() const;
+
+            // Float complement() const;
+
             void Print();
-            friend std::ostream operator<< (std::ostream &, const Float &);
+            friend std::ostream &operator<< (std::ostream &, const Float &);
 
             Float Add(Float);
+            // Float Multiply(Float);
     };
 
 }
