@@ -49,15 +49,16 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
             inOther = false;
     }
 
-    result.Array.pop_back();
-
     if(result.Array.back() == 9)
         result.isNegative = true;
-
-    // match digits part
-    // std::vector<int> = 
-
+    
     result.PointPosition = this->PointPosition > otherOne.PointPosition ? this->PointPosition : otherOne.PointPosition;
+
+    // HR;
+    // this->Print();
+    // otherOne.Print();
+    // result.Print();
+    // HR;
 
     return result;
 }

@@ -1,7 +1,8 @@
 #include "Integer.h"
 
-// time taken by Add2 : 4.567s
-// time taken by Add  : 4.848s
+// slightly better
+// time taken by Add2 : 4.567s - 100_000 // 38.188 - 1_000_000
+// time taken by Add  : 4.848s - 100_000 // 41.285 - 1_000_000
 
 InfiniteArithmetic::Integer &InfiniteArithmetic::Integer::Add2(Integer &obj)
 {

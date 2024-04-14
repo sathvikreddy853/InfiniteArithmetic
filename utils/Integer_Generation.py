@@ -8,7 +8,7 @@ def RandomInteger():
     max_range1 = 100000000000000000000000000000000000000000000
     max_range2 = 100000000000000000000000000000000000000000000
 
-    if random.random() < 0.1:
+    if random.random() < 0.005:
         num1 = randint(-max_range1, max_range1)
         num2 = -num1
     else:
@@ -25,4 +25,4 @@ def GenerateFile(fileName, noTestCases):
             output.write(f"{tuple[0]}\t{tuple[1]}\n")
 
 if __name__ == "__main__":
-    GenerateFile('./utils/Integer_Input.in', 100000)
+    GenerateFile('./utils/Integer_Input.in', 100_000_0)

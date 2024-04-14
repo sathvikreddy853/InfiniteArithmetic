@@ -3,8 +3,8 @@
 // makes sure that both the numbers have equal number of digits
 void InfiniteArithmetic::Float::MatchDigits(Float &num1, Float &num2)
 {
-    size_t Size1 = num1.Array.size();
-    size_t Size2 = num2.Array.size();
+    size_t Size1 = num1.Array.size() - num1.PointPosition + 1;
+    size_t Size2 = num2.Array.size() - num2.PointPosition + 1;
 
     if (Size1 > Size2)
     {

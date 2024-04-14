@@ -7,7 +7,7 @@ bool InfiniteArithmetic::Float::isZero() const
 
 	for(auto elem : this->Array)
 	{
-		if(elem != 0)
+		if(elem != zero_digit)
 		{
 			isZero = false;
 			break;

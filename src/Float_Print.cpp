@@ -7,7 +7,7 @@ void InfiniteArithmetic::Float::Print()
 
     size_t count = 0;
     size_t Size = Array.size();
-    
+
     for(auto it = Array.rbegin(); it<Array.rend(); it++, count++)
     {
         if (count ==  Size - PointPosition + 1)
@@ -18,25 +18,38 @@ void InfiniteArithmetic::Float::Print()
     std::cout << std::endl;
 }
 
-// std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const InfiniteArithmetic::Float & num)
-// {
-//     bool ShowZero = false;
+std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const InfiniteArithmetic::Float & num)
+{
+    bool showZero = false;
 
-//     Float printable;
+    Float printable;
 
-//     if(num.isNegative) 
-//     {
-//         if(!num.isZero())
-//             output << '-';
+    if(num.isNegative) 
+    {
+        if(!num.isZero())
+            output << '-';
 
-//         printable = num.complement();
-//     }
-//     else
-//     {
-//         printable = num;
-//     }
+        printable = num.Complement();
+    }
+    else
+    {
+        printable = num;
+    }
 
-    
+    size_t count = 0;
+    size_t Size = num.Array.size();
 
-//     return output;
-// }
+    for(std::vector<uint16_t>::const_reverse_iterator it = printable.Array.rbegin(); it<printable.Array.rend(); it++, count++)
+    {
+        if (!showZero && *it == 0)   continue;
+        showZero = true;
+        if (count ==  Size - num.PointPosition + 1)
+            std::cout << '.';
+        output << *it;
+    }
+
+    if (!showZero)
+        output << 0;
+
+    return output;
+}

@@ -23,7 +23,7 @@ int main()
     //     InfiniteArithmetic::Integer num2 (str2);
 
     //     // change the function here
-    //     InfiniteArithmetic::Integer result = num1.Add(num2);
+    //     InfiniteArithmetic::Integer result = num1.Add2(num2);
 
     //     LOG(result);
     // }
@@ -39,11 +39,14 @@ int main()
         // LOG(i);
 
 
-    InfiniteArithmetic::Float number1 ("-7342.783");
-    InfiniteArithmetic::Float number2 ("456.89");
+    InfiniteArithmetic::Float number1 ("97342.783");
+    InfiniteArithmetic::Float number2 ("99456.89");
+    InfiniteArithmetic::Float number3 ("97342.783");
 
-    number1.Add(number2).Print(); 
-    number1.Add(number2).Complement().Print();
+    LOG(number1.Add(number3));
+    // number1.Add(number1).Print(); 
+
+    // number1.Add(number2).Complement().Print();
 
     // InfiniteArithmetic::Integer number1 ("-213");
     // InfiniteArithmetic::Integer number2 ("-7921");

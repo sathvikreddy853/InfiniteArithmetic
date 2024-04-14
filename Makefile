@@ -10,8 +10,8 @@ BUILD_DIR := ./build
 # where testing scripts are kept
 UTILS_DIR := ./utils
 
-CXX := g++
-CXXFLAGS := -Wall -Wextra -std=c++17 -I$(INCL_DIR)
+CXX := clang++
+CXXFLAGS := -Wall -Wextra -g -std=c++17 -I$(INCL_DIR)
 
 SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))

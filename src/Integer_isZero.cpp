@@ -7,7 +7,7 @@ bool InfiniteArithmetic::Integer::isZero() const
 
     for(uint16_t elem : this->Array)
     {
-        if (elem != 0)
+        if (elem != zero_digit)
         {
             isZero = false;
             break;
