@@ -33,9 +33,9 @@ namespace InfiniteArithmetic
 
             static void MatchDigits(Float &, Float &);
 
-            // bool isZero() const;
+            bool isZero() const;
 
-            // Float complement() const;
+            Float &Complement() const;
 
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Float &);

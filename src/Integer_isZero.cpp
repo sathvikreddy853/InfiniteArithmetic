@@ -2,17 +2,12 @@
 
 bool InfiniteArithmetic::Integer::isZero() const
 {
-    Integer thisOne;
+    uint16_t zero_digit = 9 * this->isNegative;
     bool isZero = true;
 
-    if (this->isNegative)
-        thisOne = this->Complement();
-    else 
-        thisOne = *this;
-
-    for(uint16_t i : thisOne.Array)
+    for(uint16_t elem : this->Array)
     {
-        if (i != 0)
+        if (elem != 0)
         {
             isZero = false;
             break;

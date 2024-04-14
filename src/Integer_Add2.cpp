@@ -1,5 +1,8 @@
 #include "Integer.h"
 
+// time taken by Add2 : 4.567s
+// time taken by Add  : 4.848s
+
 InfiniteArithmetic::Integer &InfiniteArithmetic::Integer::Add2(Integer &obj)
 {
 	Integer *result = new Integer;
