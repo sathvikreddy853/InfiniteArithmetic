@@ -6,8 +6,7 @@ It can perform all of the regular operations like add, subtract, multiply, divid
 
 The library has been tested using python scripts which can be found in the utils/ folder
 
-#### Using The Library
-
+### Using The Library
 The library contains two header files - one for integers and the other for floating point numbers.
 
 Simply include the files by using `#include "Integer.h"` or `#include "Float.h"` or both depending on your requirement.
@@ -23,14 +22,14 @@ To build the executable
 make all 
 ```
 
-### Building A Library
+### Building The Library
 You can build a library and link it to a C or C++ code that you are building.  
 Build it using the following command
 ```shell
 make inf-lib
 ```
+### Linking The Library
 Just include the header files in your project directory and link the library using the following command:
-
 ```shell
 g++ <your-file-here>.cpp -llib-inf -o <executable>
 ```
@@ -40,6 +39,9 @@ Here's a briefing of the utilities in `Integer.h`
 
 
 #### Class Methods
+
+Note : The functions marked with @ are private functions.
+
 | Functions | Purpose | 
 | --------- | --------- |
 | Assign | Used to assign the object to another value |
@@ -48,23 +50,32 @@ Here's a briefing of the utilities in `Integer.h`
 | Multiply | Multiplies two numbers | 
 | Divide | Divides two numbers | 
 | Mod | Returns the remainder |
-| Complement | Takes the complement of given number | 
-| MatchDigits | Matches the digits of two numbers such that they are equal |
-| PopZero | Removes redundant zeroes from the number | 
-| Print | Displays the number |
+| Negate | Negates the number |
 | isZero | Tells if the number is zero or not | 
+| parse | Returns an instance of the Integer class | 
+| @Complement | Takes the complement of given number | 
+| @MatchDigits | Matches the digits of two numbers such that they are equal |
+| @PopZero | Removes redundant zeroes from the number | 
+| @Print | Displays the number |
+
 
 #### Class Operators
+
+Note : The operators marked with @ are private.
+
 | Operators | Purpose |
 | --------- | ------- |
 | operator<< | Used to display the number (output the number) |
+| operator>> | Used to take the number from input stream |
 | operator= | Used to assign the object to another value | 
 | operator+ | Adds two numbers |
 | operator– | Subtracts one number from the other |
 | operator* | Multiplies two numbers |
 | operator/ | Divides one number by the other |
 | operator% | Takes the mod of one number w.r.t the other |
-| operator~ | Takes the complement of the number | 
+| operator+ | Returns the same number | 
+| operator- | Negates the number | 
+| @operator~ | Takes the complement of the number | 
 
 Note: All the operators have been defined in terms of the class methods
 
@@ -73,6 +84,9 @@ Note: All the operators have been defined in terms of the class methods
 And here are the directions to use `Float.h`
 
 #### Class Methods
+
+Note : The functions marked with @ are private functions.
+
 | Functions | Purpose | 
 | --------- | --------- |
 | Assign | Used to assign the object to another value |
@@ -80,9 +94,29 @@ And here are the directions to use `Float.h`
 | Subtract | Subtracts one number from the other | 
 | Multiply | Multiplies two numbers | 
 | Divide | Divides two numbers | 
-| Mod | Returns the remainder |
-| Complement | Takes the complement of given number | 
-| MatchDigits | Matches the digits of two numbers such that they are equal |
-| PopZero | Removes redundant zeroes from the number | 
-| Print | Displays the number |
+| Negate | Negates the number |
 | isZero | Tells if the number is zero or not |
+| parse | Returns an instance of the Float class | 
+| @Complement | Takes the complement of given number | 
+| @MatchDigits | Matches the digits of two numbers such that they are equal |
+| @PopZero | Removes redundant zeroes from the number | 
+| @Print | Displays the number |
+
+#### Class Operators
+
+Note : The operators marked with @ are private.
+
+| Operators | Purpose |
+| --------- | ------- |
+| operator<< | Used to display the number (output the number) |
+| operator>> | Used to take the number from input stream |
+| operator= | Used to assign the object to another value | 
+| operator+ | Adds two numbers |
+| operator– | Subtracts one number from the other |
+| operator* | Multiplies two numbers |
+| operator/ | Divides one number by the other |
+| operator+ | Returns the same number | 
+| operator- | Negates the number | 
+| @operator~ | Takes the complement of the number | 
+
+Note: All the operators have been defined in terms of the class methods
