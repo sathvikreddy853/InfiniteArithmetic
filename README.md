@@ -42,7 +42,7 @@ Here's a briefing of the utilities in `Integer.h`
 
 Note : The functions marked with @ are private functions.
 
-| Functions | Purpose | 
+|  <div style="width:110px">Functions</div> | <div style="width:110px">Purpose</div> | 
 | --------- | --------- |
 | Assign | Used to assign the object to another value |
 | Add | Adds two numbers together | 
@@ -63,7 +63,7 @@ Note : The functions marked with @ are private functions.
 
 Note : The operators marked with @ are private.
 
-| Operators | Purpose |
+|  <div style="width:110px">Operators</div> | <div style="width:110px">Purpose</div> | 
 | --------- | ------- |
 | operator<< | Used to display the number (output the number) |
 | operator>> | Used to take the number from input stream |
@@ -87,7 +87,7 @@ And here are the directions to use `Float.h`
 
 Note : The functions marked with @ are private functions.
 
-| Functions | Purpose | 
+|  <div style="width:110px">Functions</div> | <div style="width:110px">Purpose</div> | 
 | --------- | --------- |
 | Assign | Used to assign the object to another value |
 | Add | Adds two numbers together | 
@@ -106,7 +106,7 @@ Note : The functions marked with @ are private functions.
 
 Note : The operators marked with @ are private.
 
-| Operators | Purpose |
+|  <div style="width:110px">Operators</div> | <div style="width:110px">Purpose</div>  | 
 | --------- | ------- |
 | operator<< | Used to display the number (output the number) |
 | operator>> | Used to take the number from input stream |
