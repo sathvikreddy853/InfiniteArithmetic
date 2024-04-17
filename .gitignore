@@ -3,4 +3,9 @@
 .DS_store
 /build/
 /Calculator
-lib-inf.a
+*.a
+/docs/*.aux
+/docs/*.fdb_latexmk
+/docs/*.fls
+/docs/*.log
+/docs/*.gz
