@@ -13,25 +13,25 @@ The library contains two header files - one for integers and the other for float
 Simply include the files by using `#include "Integer.h"` or `#include "Float.h"` or both depending on your requirement.
 
 ### Cloning The Repository
-```
+```shell
 git clone <replace-with-repository-name>
 ```
 
 ### Building The Executable 
 To build the executable 
-```
+```shell
 make all 
 ```
 
 ### Building A Library
 You can build a library and link it to a C or C++ code that you are building.  
 Build it using the following command
-```
+```shell
 make inf-lib
 ```
 Just include the header files in your project directory and link the library using the following command:
 
-```
+```shell
 g++ <your-file-here>.cpp -llib-inf -o <executable>
 ```
 

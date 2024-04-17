@@ -30,10 +30,10 @@ int main()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    InfiniteArithmetic::Float number1 ("1312");
-    InfiniteArithmetic::Float number2 ("32342");
+    InfiniteArithmetic::Float number1 ("1312.1");
+    // InfiniteArithmetic::Float number2 ("32342");
 
-    LOG(number1.Multiply(number2));
+    LOG(number1.MultiplyByDigit(7));
     
     return 0;
 }

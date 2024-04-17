@@ -40,8 +40,15 @@ namespace InfiniteArithmetic
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Float &);
 
+            int16_t Compare(const Float &);
+
             Float Add(Float);
+            Float &Add2(Float &);
+
+            Float Subtract(Float);
             Float Multiply(Float);
+            Float MultiplyByDigit(uint16_t);
+            Float Divide(Float);
     };
 
 }
