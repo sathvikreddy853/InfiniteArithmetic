@@ -10,6 +10,8 @@ BUILD_DIR := ./build
 # where testing scripts are kept
 UTILS_DIR := ./utils
 
+LIB := lib-inf.a
+
 CXX := clang++
 CXXFLAGS := -Wall -Wextra -g -std=c++17 -I$(INCL_DIR)
 
@@ -57,8 +59,8 @@ generate : $(GEN_FILES)
 # %_Generation.py: 
 #	python3 -u $(UTILS_DIR)/$@
 
-lib-inf: $(BUILD_DIR) $(OBJS)
-	@ar rcs $@.a $(OBJS)
+$(LIB): $(BUILD_DIR) $(OBJS)
+	@ar rcs $@ $(OBJS)
 	@echo "Building Library!"
 
 run : 
@@ -66,7 +68,8 @@ run :
 	@echo "Running Calculator"
 
 clean :
-	@rm -r $(BUILD_DIR) 
-	@rm $(TARGET_EXEC)
-	@rm $(OUT)
+	-@rm -r $(BUILD_DIR)
+	-@rm "$(TARGET_EXEC)";
+	-@rm $(OUT)
+	-@rm $(LIB)
 	@echo "Clearing All Files!"

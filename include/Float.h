@@ -41,7 +41,7 @@ namespace InfiniteArithmetic
             friend std::ostream &operator<< (std::ostream &, const Float &);
 
             Float Add(Float);
-            // Float Multiply(Float);
+            Float Multiply(Float);
     };
 
 }
