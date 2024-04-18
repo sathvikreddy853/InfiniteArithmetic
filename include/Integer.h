@@ -56,11 +56,15 @@ namespace InfiniteArithmetic
             Integer Divide(Integer);
             Integer Mod(Integer);
 
-            Integer operator+(const Integer &);
-            Integer operator-(const Integer &);
-            Integer operator*(const Integer &);
-            Integer operator/(const Integer &);
-            Integer operator%(const Integer &);
+            Integer &Negate();
+
+            Integer &operator+(Integer &);
+            Integer operator-(Integer &);
+            Integer operator*(Integer &);
+            Integer operator/(Integer &);
+            Integer operator%(Integer &);
+            Integer operator-();
+            Integer operator+();
             Integer operator~();
             // Integer operator>>(size_t);
             // Integer operator<<(size_t);
