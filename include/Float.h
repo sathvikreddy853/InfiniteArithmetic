@@ -24,7 +24,6 @@ namespace InfiniteArithmetic
         public: 
 
             // constructors
-
             Float();
             Float(std::string);
             Float(const Float &);
@@ -43,6 +42,8 @@ namespace InfiniteArithmetic
 
             int16_t Compare(const Float &);
 
+            size_t SetPrecision(size_t prec=1000);
+
             Float Add(Float);
             // Float &Add2(Float &);        // placeholder
 
@@ -50,7 +51,6 @@ namespace InfiniteArithmetic
             Float Multiply(Float);
             Float MultiplyByDigit(uint16_t);
             Float Divide(Float);
-
 
             Float operator+(Float &);
             Float operator-(Float &);
