@@ -2,7 +2,7 @@ import random
 from random import randint
 
 # run the generator using 
-#       python utils/Integer_Generation.py
+#       python utils/Addition_Checker.py
 
 def RandomInteger():
     max_range1 = 100000000000000000000000000000000000000000000
@@ -25,4 +25,4 @@ def GenerateFile(fileName, noTestCases):
             output.write(f"{tuple[0]}\t{tuple[1]}\n")
 
 if __name__ == "__main__":
-    GenerateFile('./utils/Integer_Input.in', 100_000_0)
+    GenerateFile('./utils/Integer_Input.in', 100_000)

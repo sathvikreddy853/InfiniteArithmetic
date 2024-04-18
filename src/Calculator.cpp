@@ -1,6 +1,6 @@
 #include <iostream>
-// #include "Integer.h"
-#include "Float.h"
+#include "Integer.h"
+// #include "Float.h"
 
 int main()
 {
@@ -23,17 +23,30 @@ int main()
     //     InfiniteArithmetic::Integer num2 (str2);
 
     //     // change the function here
-    //     InfiniteArithmetic::Integer result = num1.Add2(num2);
+    //     InfiniteArithmetic::Integer result = num1.Add(num2);
 
     //     LOG(result);
     // }
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    InfiniteArithmetic::Float number1 ("1312.1");
+    // InfiniteArithmetic::Float number1 ("1312.1");
     // InfiniteArithmetic::Float number2 ("32342");
 
-    LOG(number1.MultiplyByDigit(7));
+    //     // change the function here
+    //     InfiniteArithmetic::Integer result = num1.Add2(num2);
+
+    //     LOG(result);
+
+///////////////////////////////////////////////////////////////////////////////
+
+    // InfiniteArithmetic::Float number1 ("1312.1");
+    // InfiniteArithmetic::Float number2 ("32342");
+
+    InfiniteArithmetic::Integer num1 ("132213");
+    InfiniteArithmetic::Integer num2 ("-413419");
+
+    LOG(num1 + num2);
     
     return 0;
 }

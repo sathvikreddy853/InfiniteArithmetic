@@ -3,7 +3,6 @@
 InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
 {
     Integer result;
-
     Integer thisOne = *this;
 
     MatchDigits(thisOne, otherOne);
@@ -35,14 +34,11 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
             inOther = false;
     }
 
-    result.Array.pop_back();
-
     if(result.Array.back() == 9)
         result.isNegative = true;
 
     // thisOne.Print(); 
     // otherOne.Print();
-    // result.Print();
 
     return result;
 }
