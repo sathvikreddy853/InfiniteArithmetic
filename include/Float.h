@@ -44,12 +44,21 @@ namespace InfiniteArithmetic
             int16_t Compare(const Float &);
 
             Float Add(Float);
-            Float &Add2(Float &);
+            // Float &Add2(Float &);        // placeholder
 
             Float Subtract(Float);
             Float Multiply(Float);
             Float MultiplyByDigit(uint16_t);
             Float Divide(Float);
+
+
+            Float operator+(Float &);
+            Float operator-(Float &);
+            Float operator*(Float &);
+            Float operator/(Float &);
+            Float operator-();
+            Float operator+();
+            Float operator~();
     };
 
 }
