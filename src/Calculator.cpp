@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Integer.h"
-// #include "Float.h"
+#include "Float.h"
 
 int main()
 {
@@ -40,13 +40,15 @@ int main()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    // InfiniteArithmetic::Float number1 ("1312.1");
+    InfiniteArithmetic::Float number1 ("-1312.1");
     // InfiniteArithmetic::Float number2 ("32342");
 
-    InfiniteArithmetic::Integer num1 ("132213");
-    InfiniteArithmetic::Integer num2 ("-413419");
+    LOG(number1.Negate());
 
-    LOG(num1 + num2);
+    // InfiniteArithmetic::Integer num1 ("132213");
+    // InfiniteArithmetic::Integer num2 ("-413419");
+
+    // LOG(num1 + num2);
     
     return 0;
 }

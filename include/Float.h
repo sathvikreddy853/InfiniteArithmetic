@@ -36,6 +36,7 @@ namespace InfiniteArithmetic
             bool isZero() const;
 
             Float &Complement() const;
+            Float &Negate() const;
 
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Float &);
