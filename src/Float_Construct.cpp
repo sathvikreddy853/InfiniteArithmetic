@@ -1,5 +1,7 @@
 #include "Float.h"
 
+size_t InfiniteArithmetic::Float::prec = 100;
+
 // empty constructor
 InfiniteArithmetic::Float::Float() : PointPosition(1), isNegative(false)
 {

@@ -1,9 +1,6 @@
 #include "Float.h"
 
-size_t InfiniteArithmetic::Float::SetPrecision(size_t prec)
+void InfiniteArithmetic::Float::SetPrecision(size_t precision)
 {
-	static size_t precision = 100;
-	precision = prec;
-
-	return precision;
+	prec = precision;
 }
