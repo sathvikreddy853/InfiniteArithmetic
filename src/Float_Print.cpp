@@ -38,6 +38,7 @@ std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const Infinit
 
     size_t count = 0;
     size_t Size = num.Array.size();
+    // LOG("Size: " << Size << " PP: " << num.PointPosition);
 
     for(std::vector<uint16_t>::const_reverse_iterator it = printable.Array.rbegin(); it<printable.Array.rend(); it++, count++)
     {
@@ -48,7 +49,7 @@ std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const Infinit
         }
         
         if (!showZero && *it == 0)   continue;
-        showZero = true;
+            showZero = true;
         output << *it;
     }
 

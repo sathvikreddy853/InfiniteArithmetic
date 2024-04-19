@@ -54,6 +54,8 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
     
     result.PointPosition = this->PointPosition > otherOne.PointPosition ? this->PointPosition : otherOne.PointPosition;
 
+    result.PopZero();
+    
     // HR;
     // this->Print();
     // otherOne.Print();
