@@ -1,22 +1,12 @@
-input_numbers = []
-output_numbers = []
+# utils/Multiplication_Checker.py
 
-def CheckInput(inputFile):
-    with open(inputFile, 'r') as input:
-        for ln, line in enumerate(input):
-            if ln == 0:
-                continue
+# run the Calc using:
+#       time ./Calculator < utils/Integer_Input.in > utils/Multiplication_Output.out                                               
 
-            num1, num2 = map(int, line.strip().split())
-            input_numbers.append((num1, num2))  
+# run the checker using: 
+#       python utils/Multiplication_Checker.py
 
-
-def CheckOutput(outputFile):
-    with open(outputFile, 'r') as output:
-        for line in output:
-            ans = int(line.strip())
-            output_numbers.append(ans)
-
+from Int_Checker import *
 
 def Verify():
     for index, tuple in enumerate(input_numbers):
