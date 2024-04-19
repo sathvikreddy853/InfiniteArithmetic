@@ -41,10 +41,14 @@ std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const Infinit
 
     for(std::vector<uint16_t>::const_reverse_iterator it = printable.Array.rbegin(); it<printable.Array.rend(); it++, count++)
     {
+        if (count ==  Size - num.PointPosition + 1)
+        {
+            std::cout << '.';
+            showZero = true;
+        }
+        
         if (!showZero && *it == 0)   continue;
         showZero = true;
-        if (count ==  Size - num.PointPosition + 1)
-            std::cout << '.';
         output << *it;
     }
 

@@ -40,10 +40,11 @@ int main()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    InfiniteArithmetic::Float number1 ("1312.1");
-    InfiniteArithmetic::Float number2 ("3234");
+    InfiniteArithmetic::Float number1 ("0.02");
+    InfiniteArithmetic::Float number2 ("21");
 
-    LOG(number1.Add(number2));
+    number1.Print();
+    LOG(number1);
 
     // InfiniteArithmetic::Integer num1 ("132213");
     // InfiniteArithmetic::Integer num2 ("-413419");

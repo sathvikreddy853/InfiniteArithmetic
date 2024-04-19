@@ -38,11 +38,12 @@ namespace InfiniteArithmetic
             Float &Negate() const;
 
             void Print();
+            void PopZero();
             friend std::ostream &operator<< (std::ostream &, const Float &);
 
             int16_t Compare(const Float &);
 
-            size_t SetPrecision(size_t prec=1000);
+            size_t SetPrecision(size_t prec=100);
 
             Float Add(Float);
             // Float &Add2(Float &);        // placeholder

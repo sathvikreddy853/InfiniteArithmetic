@@ -40,6 +40,12 @@ InfiniteArithmetic::Float::Float(std::string num) : PointPosition(1), isNegative
                 Array.push_back((num[Size - i - 1] - '0'));
         }
     }
+
+    while(!isNegative && Array.size() - PointPosition + 1 > 0 && Array.back() == 0)
+        Array.pop_back();
+
+    while(isNegative && Array.size() - PointPosition + 1 && Array.back() == 9)
+        Array.pop_back();
 }
 
 InfiniteArithmetic::Float::Float(const Float &obj) : PointPosition(obj.PointPosition), isNegative(obj.isNegative)
