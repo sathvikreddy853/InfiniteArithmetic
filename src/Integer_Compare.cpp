@@ -9,6 +9,7 @@ int16_t InfiniteArithmetic::Integer::Compare(const Integer & other)
         else
             return 1;
     }
+    
     else
     {
         Integer thisOne;

@@ -31,9 +31,13 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
     // set up the divisor
 	divisor.Array.insert(divisor.Array.begin(), 0);
 
+	size_t diff = dividendSize-divisorSize>0 ? dividendSize-divisorSize : divisorSize-dividendSize;
+
+	divisor.Array.insert(divisor.Array.begin(), diff + precision, 0);
+
     uint16_t multiplier;
 
-    for(size_t i=0; i<dividendSize-divisorSize+1; i++)
+    for(size_t i=0; i<dividendSize-divisorSize+1+precision; i++)
     {
         for(multiplier=1; multiplier<10; multiplier++)
         {
@@ -52,6 +56,8 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
 
     if(result.isNegative)
         result = result.Complement();
+
+	result.PointPosition = precision;
 
     return result;
 }

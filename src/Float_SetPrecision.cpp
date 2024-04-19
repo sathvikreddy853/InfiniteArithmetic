@@ -1,8 +1,8 @@
 #include "Float.h"
 
-size_t InfiniteArithmetic::Float::SetPrecision(size_t prec=1000)
+size_t InfiniteArithmetic::Float::SetPrecision(size_t prec)
 {
-	static size_t precision = 1000;
+	static size_t precision = 100;
 	precision = prec;
 
 	return precision;
