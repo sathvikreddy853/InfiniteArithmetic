@@ -40,13 +40,13 @@ int main()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    // InfiniteArithmetic::Float number1 ("56151.36924505846");
-    // InfiniteArithmetic::Float number2 ("312355.08467188");
+    InfiniteArithmetic::Float number1 ("607497.3530569");
+    InfiniteArithmetic::Float number2 ("174554.230524");
 
-    InfiniteArithmetic::Float number1 ("5.0");
-    InfiniteArithmetic::Float number2 ("2.0");
+    // InfiniteArithmetic::Float number1 ("32859.45077779");
+    // InfiniteArithmetic::Float number2 ("9.961067");
 
-    LOG(number1/number2);
+    LOG(number1.Divide(number2));
     // LOG(number1.Divide(number2));
 
     // InfiniteArithmetic::Integer num1 ("132213");

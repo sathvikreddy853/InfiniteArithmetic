@@ -32,6 +32,7 @@ namespace InfiniteArithmetic
             Float &operator=(const Float &);
 
             static void MatchDigits(Float &, Float &);
+            static void ResizeEnds(Float &, Float &);
 
             bool isZero() const;
 
@@ -47,12 +48,14 @@ namespace InfiniteArithmetic
             static void SetPrecision(size_t precision=100);
 
             Float Add(Float);
+            Float Add2(Float);
             // Float &Add2(Float &);        // placeholder
 
             Float Subtract(Float);
             Float Multiply(Float);
             Float MultiplyByDigit(uint16_t);
             Float Divide(Float);
+            Float Divide2(Float);
 
             Float operator+(Float &);
             Float operator-(Float &);

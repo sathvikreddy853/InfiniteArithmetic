@@ -25,18 +25,19 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
     size_t dividendSize = dividend.Array.size();
     size_t divisorSize = divisor.Array.size();
 
-    uint64_t idigit_diff = (dividend.Array.size() - dividend.PointPosition) - (divisor.Array.size() - divisor.PointPosition) + 1;
-    uint64_t tdigit_diff = (dividend.Array.size() - divisor.Array.size()) + 1;
+    int64_t idigit_diff = (dividend.Array.size() - dividend.PointPosition) - (divisor.Array.size() - divisor.PointPosition) + 1;
+    int64_t tdigit_diff = (dividend.Array.size() - divisor.Array.size()) + 1;
 
     int16_t point_adder = dividend.Compare(divisor);
     if (point_adder >= 0)   point_adder = 2; 
     if (point_adder == -1)   point_adder = 1;
-
+    LOG("pa: " << dividend.Compare(divisor));
     // set up the divisor
     if(prec + 1 - (tdigit_diff - idigit_diff))
         dividend.Array.insert(dividend.Array.begin(), prec + 1 - (tdigit_diff - idigit_diff), 0);
 
     // divisor.Array.insert(divisor.Array.begin(), prec - (tdigit_diff - idigit_diff), 0);
+    if(dividendSize-divisorSize + prec + 1)
         divisor.Array.insert(divisor.Array.begin(), dividendSize-divisorSize + prec + 1, 0);
 
     uint16_t multiplier;
@@ -61,7 +62,10 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
         result = result.Complement();
 
     result.PopZero();
-    result.PointPosition = result.Array.size() - idigit_diff + point_adder ;
+    result.PointPosition = result.Array.size() - idigit_diff + point_adder;
+
+    // if(result.PointPosition - 1 - result.Array.size() > 0)
+        // result.Array.insert(result.Array.end(), result.PointPosition - 1 - result.Array.size(), 0);
 
     return result;
 }
