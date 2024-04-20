@@ -1,5 +1,6 @@
 // IntegerArithmetic/Float.h
 
+#pragma once
 #ifndef FLOAT_H
 #define FLOAT_H
 
@@ -42,11 +43,15 @@ namespace InfiniteArithmetic
 
             void Print();
             void PopZero();
+
             friend std::ostream &operator<< (std::ostream &, const Float &);
+            friend std::istream &operator>> (std::istream &, const Float &);
 
             int16_t Compare(const Float &);
 
             static void SetPrecision(int64_t precision=100);
+
+            static Float parse(const std::string& s);
 
             Float Add(Float);
             Float Add2(Float);
@@ -58,10 +63,10 @@ namespace InfiniteArithmetic
             Float Divide(Float);
             Float Divide2(Float);
 
-            Float operator+(Float &);
-            Float operator-(Float &);
-            Float operator*(Float &);
-            Float operator/(Float &);
+            Float operator+(const Float &);
+            Float operator-(const Float &);
+            Float operator*(const Float &);
+            Float operator/(const Float &);
             Float operator-();
             Float operator+();
             Float operator~();

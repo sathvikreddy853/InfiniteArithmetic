@@ -1,21 +1,21 @@
 #include "Float.h"
 
-InfiniteArithmetic::Float InfiniteArithmetic::Float::operator+(Float &other)
+InfiniteArithmetic::Float InfiniteArithmetic::Float::operator+(const Float &other)
 {
 	return this->Add(other);
 }
 
-InfiniteArithmetic::Float InfiniteArithmetic::Float::operator-(Float &other)
+InfiniteArithmetic::Float InfiniteArithmetic::Float::operator-(const Float &other)
 {
 	return this->Subtract(other);
 }
 
-InfiniteArithmetic::Float InfiniteArithmetic::Float::operator*(Float &other)
+InfiniteArithmetic::Float InfiniteArithmetic::Float::operator*(const Float &other)
 {
 	return this->Multiply(other);
 }
 
-InfiniteArithmetic::Float InfiniteArithmetic::Float::operator/(Float &other)
+InfiniteArithmetic::Float InfiniteArithmetic::Float::operator/(const Float &other)
 {
 	return this->Divide(other);
 }

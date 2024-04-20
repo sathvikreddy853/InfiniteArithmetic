@@ -1,5 +1,6 @@
 // InfiniteArithmetic/Integer.h
 
+#pragma once
 #ifndef INTEGER_H
 #define INTEGER_H
 
@@ -37,8 +38,7 @@ namespace InfiniteArithmetic
             // used to `Print` the integer
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Integer &);
-
-            // static int64_t RegisterSize(const Integer &, const Integer &);
+            friend std::istream &operator>> (std::istream &, const Integer &);
 
             static void MatchDigits(Integer &, Integer &);
             int16_t Compare(const Integer &);
@@ -48,6 +48,8 @@ namespace InfiniteArithmetic
 
             void PopZero();
             bool isZero() const;
+
+            static Integer parse(const std::string& s);
 
             // operations
             Integer Add(Integer);
@@ -61,16 +63,14 @@ namespace InfiniteArithmetic
 
             Integer &Negate();
 
-            Integer &operator+(Integer &);
-            Integer operator-(Integer &);
-            Integer operator*(Integer &);
-            Integer operator/(Integer &);
-            Integer operator%(Integer &);
+            Integer operator+(const Integer &);
+            Integer operator-(const Integer &);
+            Integer operator*(const Integer &);
+            Integer operator/(const Integer &);
+            Integer operator%(const Integer &);
             Integer operator-();
             Integer operator+();
             Integer operator~();
-            // Integer operator>>(int64_t);
-            // Integer operator<<(int64_t);
     };
 }
 

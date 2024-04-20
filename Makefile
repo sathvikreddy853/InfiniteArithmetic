@@ -1,6 +1,6 @@
 # Makefile InfiniteArithmetic
 
-TARGET_EXEC := Calculator
+TARGET_EXEC := my_inf_arith
 # where the .cpp files are present
 SRC_DIR := ./src
 # where the .h files are present
@@ -51,13 +51,6 @@ $(BUILD_DIR)/Float_%.o : $(SRC_DIR)/Float_%.cpp $(INCL_DIR)/Float.h
 # for building Caculator
 $(BUILD_DIR)/$(TARGET_EXEC).o : $(SRC_DIR)/$(TARGET_EXEC).cpp $(INCL_DIR)/Integer.h $(INCL_DIR)/Float.h
 	$(CXX) -c $(CXXFLAGS) $< -o $@
-
-generate : $(GEN_FILES) 
-	@echo "Generating Test Cases"
-
-# for generating test files
-# %_Generation.py: 
-#	python3 -u $(UTILS_DIR)/$@
 
 $(LIB): $(BUILD_DIR) $(OBJS)
 	@ar rcs $@ $(OBJS)

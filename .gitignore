@@ -10,3 +10,5 @@
 /docs/*.log
 /docs/*.gz
 __pycache__
+/utils/*.out
+/utils/*.in

@@ -1,21 +1,21 @@
 #include "Integer.h"
 
-InfiniteArithmetic::Integer &InfiniteArithmetic::Integer::operator+(Integer &other)
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator+(const Integer &other)
 {
-	return this->Add2(other);
+	return this->Add(other);
 }
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator-(Integer &other)
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator-(const Integer &other)
 {
 	return this->Subtract(other);
 }
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator*(Integer &other)
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator*(const Integer &other)
 {
 	return this->Multiply(other);
 }
 
-InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator/(Integer &other)
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator/(const Integer &other)
 {
 	return this->Divide(other);
 }
