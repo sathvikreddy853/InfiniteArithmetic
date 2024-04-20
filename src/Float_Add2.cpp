@@ -42,10 +42,10 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add2(Float otherOne)
         if(i+1-shift == 0)
             inThis = true, inOther = true;
 
-        if(thisIndex == this->Array.size() - 1)
+        if(thisIndex == (int64_t)this->Array.size() - 1)
             inThis = false;
         
-        if(otherIndex == otherOne.Array.size() - 1)
+        if(otherIndex == (int64_t)otherOne.Array.size() - 1)
             inOther = false;
     }
 

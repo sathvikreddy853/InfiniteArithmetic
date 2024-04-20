@@ -9,3 +9,4 @@
 /docs/*.fls
 /docs/*.log
 /docs/*.gz
+__pycache__

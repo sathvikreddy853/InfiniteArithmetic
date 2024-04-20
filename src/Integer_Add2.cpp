@@ -34,10 +34,10 @@ InfiniteArithmetic::Integer &InfiniteArithmetic::Integer::Add2(Integer &obj)
 
 		result->Array.push_back(digit);
 
-		if (i == this->Array.size() - 1)
+		if (i == (int64_t)this->Array.size() - 1)
 			inThis = false;
 		
-		if (i == other->Array.size() - 1)
+		if (i == (int64_t)other->Array.size() - 1)
 			inOther = false;
 	}
 

@@ -2,11 +2,11 @@ import random
 from random import randint
 
 # run the generator using 
-#       python utils/Addition_Checker.py
+#       python utils/Integer_Generation.py
 
 def RandomInteger():
     max_range1 = 100000000000000000000000000000000000000000000
-    max_range2 = 100000000000000000000000000000000000000000000
+    max_range2 = 1000000000000000000000000000000000000000
 
     if random.random() < 0.005:
         num1 = randint(-max_range1, max_range1)

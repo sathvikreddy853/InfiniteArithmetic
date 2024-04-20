@@ -23,7 +23,7 @@ int main()
     //     InfiniteArithmetic::Integer num2 (str2);
 
     //     // change the function here
-    //     InfiniteArithmetic::Integer result = num1.Add(num2);
+    //     InfiniteArithmetic::Integer result = num1.Divide(num2);
 
     //     LOG(result);
     // }
@@ -40,21 +40,26 @@ int main()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-    // InfiniteArithmetic::Float number1 ("50");
-    // InfiniteArithmetic::Float number2 ("10000006"); 
+    InfiniteArithmetic::Float number1 ("8792726365283060579833950521677211.0");
+    InfiniteArithmetic::Float number2 ("493835253617089647454998358"); 
 
-    InfiniteArithmetic::Float::SetPrecision(1000);
+    InfiniteArithmetic::Float::SetPrecision(100);
 
-    InfiniteArithmetic::Float number1 ("50");
-    InfiniteArithmetic::Float number2 ("0.000006");
-
-    // InfiniteArithmetic::Integer number1 ("108937456");
-    // InfiniteArithmetic::Integer number2 ("2780345");
-
+    LOG(number1.Add(number2));
+    LOG(number1.Subtract(number2));
+    LOG(number1.Multiply(number2));
     LOG(number1.Divide(number2));
 
+    // InfiniteArithmetic::Float::SetPrecision(1000);
+
+    // InfiniteArithmetic::Float number1 ("0.00006");
+    // InfiniteArithmetic::Float number2 ("50");
+
+    // InfiniteArithmetic::Integer number1 ("-31051733526151724502375603548743916109532380");
+    // InfiniteArithmetic::Integer number2 ("31051733526151724502375603548743916109532380");
+
+
     // LOG(number1.Add(number2));
-    // LOG(number1.Divide(number2));
 
     
     // LOG(num1 + num2);

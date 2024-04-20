@@ -27,10 +27,10 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
         result.Array.push_back(digit);
 
 
-        if(i == thisOne.Array.size() - 1)
+        if(i == (int64_t)thisOne.Array.size() - 1)
             inThis = false;
         
-        if(i == otherOne.Array.size() - 1)
+        if(i == (int64_t)otherOne.Array.size() - 1)
             inOther = false;
     }
 

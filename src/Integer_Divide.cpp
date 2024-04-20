@@ -22,7 +22,6 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
         divisor.isNegative = false;
     }
 
-
     int64_t dividendSize = dividend.Array.size();
     int64_t divisorSize = divisor.Array.size();
 
@@ -50,7 +49,6 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
         divisor.Array.erase(divisor.Array.begin());
     }
     
-
     if(result.isNegative)
         result = result.Complement();
 
