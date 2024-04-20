@@ -48,7 +48,7 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
 
     result.PointPosition = prec+1;
 
-    if(result.PointPosition - 1 - result.Array.size() > 0)
+    if((int64_t)(result.PointPosition - 1 - result.Array.size()) > 0)
         result.Array.insert(result.Array.end(), result.PointPosition - 1 - result.Array.size(), 0);
 
     return result;
