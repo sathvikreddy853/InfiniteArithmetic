@@ -43,15 +43,15 @@ int main()
     // InfiniteArithmetic::Float number1 ("50");
     // InfiniteArithmetic::Float number2 ("10000006"); 
 
-    // InfiniteArithmetic::Float::SetPrecision(1000);
+    InfiniteArithmetic::Float::SetPrecision(1000);
 
-    // InfiniteArithmetic::Float number1 ("50");
-    // InfiniteArithmetic::Float number2 ("0.0006");
+    InfiniteArithmetic::Float number1 ("50");
+    InfiniteArithmetic::Float number2 ("0.000006");
 
-    InfiniteArithmetic::Integer number1 ("108937456");
-    InfiniteArithmetic::Integer number2 ("2780345");
+    // InfiniteArithmetic::Integer number1 ("108937456");
+    // InfiniteArithmetic::Integer number2 ("2780345");
 
-    LOG(number1.Add(number2));
+    LOG(number1.Divide(number2));
 
     // LOG(number1.Add(number2));
     // LOG(number1.Divide(number2));
