@@ -1,4 +1,5 @@
 #include "Float.h"
+#include "Integer.h"
 
 InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
 {
@@ -7,65 +8,48 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
 
     result.isNegative = this->isNegative ^ divisor.isNegative;
 
-    // setting the variables 
+    // setting the variables
     if (this->isNegative)
-    {
-        dividend = this->Complement();
-        dividend.isNegative = false;
-    }
+        dividend.Negate();
     else
         dividend = *this;
     
     if (divisor.isNegative)
-    {
-        divisor = divisor.Complement();
-        divisor.isNegative = false;
-    }
+        divisor.Negate();
 
-    size_t dividendSize = dividend.Array.size();
-    size_t divisorSize = divisor.Array.size();
+    dividend.PopZero();
+    divisor.PopZero();
 
     int64_t idigit_diff = (dividend.Array.size() - dividend.PointPosition) - (divisor.Array.size() - divisor.PointPosition) + 1;
     int64_t tdigit_diff = (dividend.Array.size() - divisor.Array.size()) + 1;
 
-    int16_t point_adder = dividend.Compare(divisor);
-    if (point_adder >= 0)   point_adder = 2; 
-    if (point_adder == -1)   point_adder = 1;
-    LOG("pa: " << dividend.Compare(divisor));
+    int64_t dp = tdigit_diff - idigit_diff;
+    int64_t ap = prec - dp;
+
     // set up the divisor
     if(prec + 1 - (tdigit_diff - idigit_diff))
-        dividend.Array.insert(dividend.Array.begin(), prec + 1 - (tdigit_diff - idigit_diff), 0);
+        dividend.Array.insert(dividend.Array.begin(), ap, 0);
 
     // divisor.Array.insert(divisor.Array.begin(), prec - (tdigit_diff - idigit_diff), 0);
-    if(dividendSize-divisorSize + prec + 1)
-        divisor.Array.insert(divisor.Array.begin(), dividendSize-divisorSize + prec + 1, 0);
 
-    uint16_t multiplier;
+    Integer num1;
+    Integer num2; 
 
-    for(size_t i=0; i< prec + idigit_diff + 1; i++)
-    {
-        for(multiplier=1; multiplier<10; multiplier++)
-        {
-            if (dividend.Compare(divisor.MultiplyByDigit(multiplier)) == -1)
-                break;
-        }
+    num1.Array = dividend.Array;
+    num2.Array = divisor.Array;
 
-        result.Array.insert(result.Array.begin(), multiplier - 1);
+    while(!num1.Array.empty() && num1.Array.back() == 0)
+        num1.Array.pop_back();
 
-        if (multiplier > 1)
-            dividend = dividend.Subtract(divisor.MultiplyByDigit(multiplier - 1));
+    while(!num2.Array.empty() && num2.Array.back() == 0)
+        num2.Array.pop_back();
 
-        divisor.Array.erase(divisor.Array.begin());
-    }
+    result.Array = (num1/num2).Array;
 
-    if(result.isNegative)
-        result = result.Complement();
+    result.PointPosition = prec+1;
 
-    result.PopZero();
-    result.PointPosition = result.Array.size() - idigit_diff + point_adder;
-
-    // if(result.PointPosition - 1 - result.Array.size() > 0)
-        // result.Array.insert(result.Array.end(), result.PointPosition - 1 - result.Array.size(), 0);
+    if(result.PointPosition - 1 - result.Array.size() > 0)
+        result.Array.insert(result.Array.end(), result.PointPosition - 1 - result.Array.size(), 0);
 
     return result;
 }

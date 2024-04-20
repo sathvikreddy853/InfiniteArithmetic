@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Integer.h"
 
 namespace InfiniteArithmetic
 {

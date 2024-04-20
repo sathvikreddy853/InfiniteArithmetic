@@ -13,10 +13,13 @@
 
 namespace InfiniteArithmetic
 {
+    class Float;
+    
     class Integer
     {
         private:
 
+            friend Float;
             std::vector<uint16_t> Array;
             bool isNegative;
     

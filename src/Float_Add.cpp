@@ -5,8 +5,10 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
     Float result;
     bool inThis = true, inOther = true;
 
-    MatchDigits(*this, otherOne);
-    ResizeEnds(*this, otherOne);
+    Float thisOne = *this;
+
+    MatchDigits(thisOne, otherOne);
+    ResizeEnds(thisOne, otherOne);
 
     uint16_t carry = 0;
     uint16_t digit = 0;
@@ -17,7 +19,7 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
         // to calculate the sum of the digits and carry
         sum = carry;
         if (inThis)
-            sum += this->Array[i];
+            sum += thisOne.Array[i];
         
         if (inOther)
             sum += otherOne.Array[i];
@@ -26,7 +28,7 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
         carry = sum/10;
         result.Array.push_back(digit);
 
-        if(i == this->Array.size() - 1)
+        if(i == thisOne.Array.size() - 1)
             inThis = false;
         
         if(i == otherOne.Array.size() - 1)
@@ -36,7 +38,7 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
     if(result.Array.back() == 9)
         result.isNegative = true;
     
-    result.PointPosition = (this->PointPosition > otherOne.PointPosition ? this->PointPosition : otherOne.PointPosition) + 2;
+    result.PointPosition = (thisOne.PointPosition > otherOne.PointPosition ? thisOne.PointPosition : otherOne.PointPosition) + 2;
 
     result.PopZero();
 
