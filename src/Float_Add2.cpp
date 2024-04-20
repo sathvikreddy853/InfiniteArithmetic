@@ -13,10 +13,10 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add2(Float otherOne)
 
     MatchDigits(*this, otherOne);
 
-    size_t shift = this->PointPosition - otherOne.PointPosition;
+    int64_t shift = this->PointPosition - otherOne.PointPosition;
 
-    size_t thisIndex = 0; 
-    size_t otherIndex = 0;
+    int64_t thisIndex = 0; 
+    int64_t otherIndex = 0;
 
     thisIndex -= !inThis * shift;
     otherIndex -= !inOther * shift;
@@ -25,7 +25,7 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add2(Float otherOne)
     uint16_t digit = 0;
     uint16_t sum = 0;
 
-    for(size_t i=0; inThis || inOther; i++, thisIndex++, otherIndex++)    
+    for(int64_t i=0; inThis || inOther; i++, thisIndex++, otherIndex++)    
     {
         // to calculate the sum of the digits and carry
         sum = carry;

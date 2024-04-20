@@ -1,6 +1,6 @@
 #include "Float.h"
 
-size_t InfiniteArithmetic::Float::prec = 1000;
+int64_t InfiniteArithmetic::Float::prec = 1000;
 
 // empty constructor
 InfiniteArithmetic::Float::Float() : PointPosition(1), isNegative(false)
@@ -12,12 +12,12 @@ InfiniteArithmetic::Float::Float(std::string num) : PointPosition(1), isNegative
     if (num[0] == '-')
     {
         isNegative = true;
-        size_t Size = num.length() - 1;
+        int64_t Size = num.length() - 1;
 
         uint16_t carry = 0;
         uint16_t digit = 0;
 
-        for (size_t i = 0; i < Size; i++)
+        for (int64_t i = 0; i < Size; i++)
         {
             if (num[Size - i] == '.')
                 PointPosition = i + 1;
@@ -33,8 +33,8 @@ InfiniteArithmetic::Float::Float(std::string num) : PointPosition(1), isNegative
     else
     {
         isNegative = false;
-        size_t Size = num.length();
-        for (size_t i = 0; i < Size; i++)
+        int64_t Size = num.length();
+        for (int64_t i = 0; i < Size; i++)
         {
             if (num[Size - i - 1] == '.')
                 PointPosition = i + 1;

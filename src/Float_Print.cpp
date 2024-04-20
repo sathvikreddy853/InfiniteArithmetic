@@ -5,8 +5,8 @@ void InfiniteArithmetic::Float::Print()
     if(this->isNegative)
         std::cout << '-';
 
-    size_t count = 0;
-    size_t Size = Array.size();
+    int64_t count = 0;
+    int64_t Size = Array.size();
 
     for(auto it = Array.rbegin(); it<Array.rend(); it++, count++)
     {
@@ -36,8 +36,8 @@ std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const Infinit
         printable = num;
     }
 
-    size_t count = 0;
-    size_t Size = num.Array.size();
+    int64_t count = 0;
+    int64_t Size = num.Array.size();
     // LOG("Size: " << Size << " PP: " << num.PointPosition);
 
     for(std::vector<uint16_t>::const_reverse_iterator it = printable.Array.rbegin(); it<printable.Array.rend(); it++, count++)

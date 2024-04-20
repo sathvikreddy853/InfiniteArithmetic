@@ -38,7 +38,7 @@ namespace InfiniteArithmetic
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Integer &);
 
-            // static size_t RegisterSize(const Integer &, const Integer &);
+            // static int64_t RegisterSize(const Integer &, const Integer &);
 
             static void MatchDigits(Integer &, Integer &);
             int16_t Compare(const Integer &);
@@ -69,8 +69,8 @@ namespace InfiniteArithmetic
             Integer operator-();
             Integer operator+();
             Integer operator~();
-            // Integer operator>>(size_t);
-            // Integer operator<<(size_t);
+            // Integer operator>>(int64_t);
+            // Integer operator<<(int64_t);
     };
 }
 

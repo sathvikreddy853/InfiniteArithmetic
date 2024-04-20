@@ -23,8 +23,8 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
     }
 
 
-    size_t dividendSize = dividend.Array.size();
-    size_t divisorSize = divisor.Array.size();
+    int64_t dividendSize = dividend.Array.size();
+    int64_t divisorSize = divisor.Array.size();
 
     // set up the divisor
     if (divisorSize > dividendSize)
@@ -34,7 +34,7 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Divide(Integer divisor)
 
     uint16_t multiplier;
 
-    for(size_t i=0; i<dividendSize-divisorSize+1; i++)
+    for(int64_t i=0; i<dividendSize-divisorSize+1; i++)
     {
         for(multiplier=1; multiplier<10; multiplier++)
         {

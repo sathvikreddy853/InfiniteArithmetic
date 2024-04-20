@@ -14,7 +14,7 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Add(Float otherOne)
     uint16_t digit = 0;
     uint16_t sum = 0;
 
-    for(size_t i=0; inThis || inOther; i++)    
+    for(int64_t i=0; inThis || inOther; i++)    
     {
         // to calculate the sum of the digits and carry
         sum = carry;

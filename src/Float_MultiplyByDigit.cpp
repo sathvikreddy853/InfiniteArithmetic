@@ -10,14 +10,14 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::MultiplyByDigit(uint16_t nu
     else
         thisOne = *this;
 
-    size_t thisOneSize = thisOne.Array.size();
+    int64_t thisOneSize = thisOne.Array.size();
     result.Array.resize(thisOneSize + 1);
 
     uint16_t carry = 0;
     uint16_t digit = 0;
     uint16_t sum = 0;
 
-    size_t index = 0;
+    int64_t index = 0;
 
     for(; index<thisOneSize; index++)
     {

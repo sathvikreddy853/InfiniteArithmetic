@@ -3,12 +3,12 @@
 // makes sure that both the numbers have equal number of digits
 void InfiniteArithmetic::Integer::MatchDigits(Integer &num1, Integer &num2)
 {
-    size_t Size1 = num1.Array.size();
-    size_t Size2 = num2.Array.size();
+    int64_t Size1 = num1.Array.size();
+    int64_t Size2 = num2.Array.size();
 
     if (Size1 > Size2)
     {
-        for(size_t i=0; i<Size1-Size2+2; i++)
+        for(int64_t i=0; i<Size1-Size2+2; i++)
             num2.Array.push_back(num2.isNegative ? 9 : 0);
         
         for(uint16_t i=0; i<2; i++)
@@ -16,7 +16,7 @@ void InfiniteArithmetic::Integer::MatchDigits(Integer &num1, Integer &num2)
     }
     else
     {
-        for(size_t i=0; i<Size2-Size1+2; i++)
+        for(int64_t i=0; i<Size2-Size1+2; i++)
             num1.Array.push_back(num1.isNegative ? 9 : 0);
 
         for(uint16_t i=0; i<2; i++)

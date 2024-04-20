@@ -15,7 +15,7 @@ InfiniteArithmetic::Integer &InfiniteArithmetic::Integer::Add2(Integer &obj)
 	uint16_t carry = 0;
 	uint16_t digit= 0;
 
-	for(size_t i=0; inThis || inOther; i++)
+	for(int64_t i=0; inThis || inOther; i++)
 	{
 		sum = carry;
 

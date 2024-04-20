@@ -21,8 +21,8 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Multiply(Float otherOne)
     uint16_t sum = 0;
 
     // for result
-    size_t shift = 0;
-    size_t place = 0;
+    int64_t shift = 0;
+    int64_t place = 0;
 
 	result.Array.resize(thisOne.Array.size() + otherOne.Array.size() + 1);
         

@@ -12,12 +12,12 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     if(num[0] == '-')
     {
         isNegative = true;
-        size_t Size = num.length() - 1;
+        int64_t Size = num.length() - 1;
 
         uint16_t carry = 0;
         uint16_t digit = 0;
 
-        for(size_t i=0; i<Size; i++)
+        for(int64_t i=0; i<Size; i++)
         {
             uint16_t sum = '9' - num[Size-i] + (i==0) + carry;
             carry = sum/10;
@@ -28,8 +28,8 @@ InfiniteArithmetic::Integer::Integer(std::string num)
     else
     {
         isNegative = false;
-        size_t Size = num.length();
-        for(size_t i=0; i<Size; i++)
+        int64_t Size = num.length();
+        for(int64_t i=0; i<Size; i++)
             Array.push_back((num[Size-i-1] - '0'));
     }
 

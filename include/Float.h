@@ -19,9 +19,9 @@ namespace InfiniteArithmetic
         private:
         
             std::vector<uint16_t> Array;
-            size_t PointPosition;
+            int64_t PointPosition;
             bool isNegative;
-            static size_t prec;
+            static int64_t prec;
 
         public: 
 
@@ -46,7 +46,7 @@ namespace InfiniteArithmetic
 
             int16_t Compare(const Float &);
 
-            static void SetPrecision(size_t precision=100);
+            static void SetPrecision(int64_t precision=100);
 
             Float Add(Float);
             Float Add2(Float);

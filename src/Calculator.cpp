@@ -12,10 +12,10 @@ int main()
     // std::string str1;
     // std::string str2;
 
-    // usize_t test_cases;
+    // uint64_t test_cases;
     // std::cin >> test_cases;
 
-    // for(usize_t test_case=0; test_case<test_cases; test_case++)
+    // for(uint64_t test_case=0; test_case<test_cases; test_case++)
     // {
     //     std::cin >> str1 >> str2;
 
