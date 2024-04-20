@@ -34,11 +34,12 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
             inOther = false;
     }
 
-    if(result.Array.back() == 9)
-        result.isNegative = true;
-
     // thisOne.Print(); 
     // otherOne.Print();
+    // result.Print();
+
+    if(result.Array.back() == 9)
+        result.isNegative = true;
 
     return result;
 }

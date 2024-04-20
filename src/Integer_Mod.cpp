@@ -2,5 +2,9 @@
 
 InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Mod(Integer other)
 {
-	return this->Subtract((this->Divide(other)).Multiply(other));
+	Integer thisOne = *this;
+	LOG(thisOne);
+	Integer temp = ((thisOne/other) * other);
+	LOG(temp);
+	return thisOne - temp;
 }

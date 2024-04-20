@@ -33,11 +33,29 @@ InfiniteArithmetic::Integer::Integer(std::string num)
             Array.push_back((num[Size-i-1] - '0'));
     }
 
-    while(!isNegative && !Array.empty() && Array.back() == 0)
-        Array.pop_back();
+    bool isZero = true;
+    for(auto elem : Array)
+    {
+        if (elem != 0) 
+        {
+            isZero = false;
+            break;
+        }
+    }
 
-    while(isNegative && !Array.empty() && Array.back() == 9)
-        Array.pop_back();
+    if(!isZero)
+    {
+        while(!isNegative && !Array.empty() && Array.back() == 0)
+            Array.pop_back();
+
+        while(isNegative && !Array.empty() && Array.back() == 9)
+            Array.pop_back();
+    }
+    else
+    {
+        Array = {0};
+        isNegative = false;
+    }
 }
 
 // copy constructor
