@@ -12,3 +12,4 @@
 __pycache__
 /utils/*.out
 /utils/*.in
+/my_inf_arith

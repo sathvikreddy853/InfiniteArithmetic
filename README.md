@@ -1,3 +1,5 @@
+<!-- /README.md -->
+
 # Infinite Precision Arithmetic Library
 
 This library is made to accomodate numbers of infinite length. 
@@ -26,12 +28,12 @@ make all
 You can build a library and link it to a C or C++ code that you are building.  
 Build it using the following command
 ```shell
-make inf-lib
+make libmy_inf_arith
 ```
 ### Linking The Library
 Just include the header files in your project directory and link the library using the following command:
 ```shell
-g++ <your-file-here>.cpp -llib-inf -o <executable>
+g++ <your-file-here>.cpp -llibmy_inf_arith -o <executable>
 ```
 
 ## Integer

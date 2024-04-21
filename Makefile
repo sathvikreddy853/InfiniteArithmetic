@@ -1,3 +1,4 @@
+# /Makefile
 # Makefile InfiniteArithmetic
 
 TARGET_EXEC := my_inf_arith
@@ -10,31 +11,27 @@ BUILD_DIR := ./build
 # where testing scripts are kept
 UTILS_DIR := ./utils
 
-LIB := lib-inf.a
+LIB := libmy_inf_arith.a
 
 CXX := clang++
 CXXFLAGS := -Wall -Wextra -g -std=c++17 -I$(INCL_DIR)
 
-SRCS := $(wildcard $(SRC_DIR)/*.cpp)
+SRCS := $(wildcard $(SRC_DIR)/Integer_*.cpp) $(wildcard $(SRC_DIR)/Float_*.cpp)
 OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 # OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)					- same output as previous
+
 TEST_FILES := $(wildcard $(UTILS_DIR)/*.out) $(wildcard $(UTILS_DIR)/*.in)
-
-UTILS_GEN_FILES := $(wildcard $(UTILS_DIR)/*_Generation.py)
-
-GEN_FILES := $(patsubst $(UTILS_DIR)/%.py, %.py, $(UTILS_GEN_FILES))
-CHECK_FILES := $(wildcard $(UTILS_DIR)/*_Cheker.py)
 
 .PHONY : all run lib-inf clean 
 
 # all1 : 
-#	@echo $(TEST_FILES)
+#	@echo $(SRCS)
 
 all : $(BUILD_DIR) $(TARGET_EXEC)
 
 # build executable
-$(TARGET_EXEC) :  $(OBJS)
-	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET_EXEC)
+$(TARGET_EXEC) :  $(OBJS) $(BUILD_DIR)/$(TARGET_EXEC).o
+	@$(CXX) $(CXXFLAGS) $(OBJS) $(BUILD_DIR)/$(TARGET_EXEC).o -o $(TARGET_EXEC)
 	@echo "Building Calculator"
 
 $(BUILD_DIR) : 
@@ -62,7 +59,7 @@ run :
 
 clean :
 	-@rm -r $(BUILD_DIR)
-	-@rm "$(TARGET_EXEC)";
-	-@rm $(OUT)
+	-@rm $(TARGET_EXEC)
+	-@rm $(TEST_FILES)
 	-@rm $(LIB)
 	@echo "Clearing All Files!"

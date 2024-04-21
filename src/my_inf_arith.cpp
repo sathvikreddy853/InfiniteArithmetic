@@ -6,15 +6,13 @@ int main(int argc, char const *argv[])
 {	
 	namespace IA = InfiniteArithmetic;
 
-	std::string type(argv[1]);
-	std::string oper(argv[2]);
-	std::string num1(argv[3]);
-	std::string num2(argv[4]);
-
-	// LOG((type == "int"));
-
 	if (argc == 5)
 	{
+		std::string type(argv[1]);
+		std::string oper(argv[2]);
+		std::string num1(argv[3]);
+		std::string num2(argv[4]);
+
 		if(type == "int")
 		{
 			if (oper == "add")
