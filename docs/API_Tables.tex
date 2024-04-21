@@ -9,6 +9,76 @@
 
 \section{API Tables}
 Note: the ones prefixed with @ are private methods.
+\subsection{Integer Table}
+\begin{table}[h]
+  \centering
+  \renewcommand{\arraystretch}{1.5} % Adjust the height of each row
+  \begin{tabular}{ >{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{8cm}} % Defines column widths and borders
+    \hline
+    \thead{\large\textbf{Functions}} & \thead{\large\textbf{Purpose}} \\
+    \hline
+    \tcbox{\textbf{Assign}} & Used to assign the object to another value \\
+    \hline
+    \tcbox{\textbf{Add}} & Adds two numbers together \\
+    \hline
+    \tcbox{\textbf{Subtract}} & Subtracts one number from the other\\
+    \hline
+    \tcbox{\textbf{Multiply}} & Multiplies two numbers \\
+    \hline
+    \tcbox{\textbf{Divide}} & Divides two numbers \\
+    \hline
+    \tcbox{\textbf{Negate}} & Negates the number \\
+    \hline
+    \tcbox{\textbf{isZero}} & Tells if the number is zero or not \\
+    \hline
+    \tcbox{\textbf{parse}} & Returns an instance of the Integer class \\
+	\hline
+	\tcbox{\textbf{Compare}} & Compares the object to another and returns a value among \verb|{0, 1, 2}| \\
+	\hline
+	\tcbox{\textbf{Negate}} & Negates the object \\
+    \hline
+    \tcbox{\textbf{@Complement}} & Takes the complement of given number \\
+    \hline
+    \tcbox{\textbf{@MatchDigits}} & Matches the digits of two numbers such that they are equal \\
+    \hline
+    \tcbox{\textbf{@PopZero}} & Removes redundant zeroes from the number \\
+    \hline
+    \tcbox{\textbf{@Print}} & Displays the number \\
+    \hline
+  \end{tabular}
+
+  \centering
+  \renewcommand{\arraystretch}{1.5} % Adjust the height of each row
+  \begin{tabular}{ >{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{8cm}} % Defines column widths and borders
+    \hline
+    \thead{\large\textbf{Operators}} & \thead{\large\textbf{Purpose}} \\
+    \hline
+    \tcbox{\textbf{operator\tiny{\textless\textless}}} & Used to assign the object to another value \\
+    \hline
+    \tcbox{\textbf{operator\tiny{\textgreater\textgreater}}} & Used to take the number from input stream \\
+    \hline
+    \tcbox{\textbf{operator=}} & Used to assign the object to another value\\
+    \hline
+    \tcbox{\textbf{operator+}} & Adds two numbers \\
+    \hline
+    \tcbox{\textbf{operator-}} & Subtracts one number from the other \\
+    \hline
+    \tcbox{\textbf{operator*}} & Multiplies two numbers \\
+    \hline
+    \tcbox{\textbf{operator/}} & Divides one number by the other \\
+    \hline
+    \tcbox{\textbf{operator\%}} & Takes the mod of one number w.r.t the other \\
+    \hline
+    \tcbox{\textbf{operator+}} & Returns the same number \\
+    \hline
+    \tcbox{\textbf{operator-}} & Negates the number \\
+    \hline
+    \tcbox{\textbf{operator\~}} & Takes the complement of the number \\
+    \hline
+  \end{tabular}
+\end{table}
+\newpage
+\subsection{Float Table}
 \begin{table}[h]
   \centering
   \renewcommand{\arraystretch}{1.5} % Adjust the height of each row
@@ -31,6 +101,10 @@ Note: the ones prefixed with @ are private methods.
     \tcbox{\textbf{isZero}} & Tells if the number is zero or not \\
     \hline
     \tcbox{\textbf{parse}} & Returns an instance of the Float class \\
+	\hline
+	\tcbox{\textbf{Compare}} & Compares the object to another and returns a value among \verb|{0, 1, 2}| \\
+	\hline
+	\tcbox{\textbf{Negate}} & Negates the object \\
     \hline
     \tcbox{\textbf{@Complement}} & Takes the complement of given number \\
     \hline
@@ -41,9 +115,6 @@ Note: the ones prefixed with @ are private methods.
     \tcbox{\textbf{@Print}} & Displays the number \\
     \hline
   \end{tabular}
-\end{table}
-
-\begin{table}[h]
   \centering
   \renewcommand{\arraystretch}{1.5} % Adjust the height of each row
   \begin{tabular}{ >{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{8cm}} % Defines column widths and borders
@@ -63,8 +134,6 @@ Note: the ones prefixed with @ are private methods.
     \tcbox{\textbf{operator*}} & Multiplies two numbers \\
     \hline
     \tcbox{\textbf{operator/}} & Divides one number by the other \\
-    \hline
-    \tcbox{\textbf{operator\%}} & Takes the mod of one number w.r.t the other \\
     \hline
     \tcbox{\textbf{operator+}} & Returns the same number \\
     \hline

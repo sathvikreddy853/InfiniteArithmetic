@@ -13,3 +13,5 @@ __pycache__
 /utils/*.out
 /utils/*.in
 /my_inf_arith
+/Calculator.cpp
+/src/Calculator.cpp_temp
