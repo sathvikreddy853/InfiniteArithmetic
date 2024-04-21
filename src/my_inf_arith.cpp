@@ -25,6 +25,11 @@ int main(int argc, char const *argv[])
 				std::cout << (IA::Integer(num1) * IA::Integer(num2));
 			else if(oper == "div")
 				std::cout << (IA::Integer(num1) / IA::Integer(num2));
+			else
+			{
+				std::cout << "IncorrectOperationError: The Operation Provided Does Not Exist" << std::endl;
+				exit(1);
+			}
 		}
 		else if(type == "float")
 		{
@@ -36,13 +41,21 @@ int main(int argc, char const *argv[])
 				std::cout << (IA::Float(num1) * IA::Float(num2));
 			else if(oper == "div")
 				std::cout << (IA::Float(num1) / IA::Float(num2));
+			else
+			{
+				std::cout << "IncorrectOperationError: The Operation Provided Does Not Exist" << std::endl;
+				exit(1);
+			}
 		}
 		else
 		{
+			std::cout << "IncorrectTypeError: The Type Provided Does Not Exist" << std::endl;
+			exit(1);
 		}
 	}
 	else
 	{
-
+		std::cout << "InsufficientArgumentError: Insufficient Arguments Have Been Provided" << std::endl;
+		exit(1);
 	}
 }
