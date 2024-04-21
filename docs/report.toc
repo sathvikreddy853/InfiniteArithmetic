@@ -3,8 +3,8 @@
 \contentsline {subsection}{\numberline {1.2}API Reference}{3}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Constructors}{3}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Destructor}{3}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}parse}{3}{subsubsection.1.2.3}%
-\contentsline {subsubsection}{\numberline {1.2.4}Assign}{4}{subsubsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.3}Integer parse(const std::string \&)}{3}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}void Assign(Integer)}{4}{subsubsection.1.2.4}%
 \contentsline {subsubsection}{\numberline {1.2.5}Print}{4}{subsubsection.1.2.5}%
 \contentsline {subsubsection}{\numberline {1.2.6}Input}{4}{subsubsection.1.2.6}%
 \contentsline {subsubsection}{\numberline {1.2.7}Add}{4}{subsubsection.1.2.7}%

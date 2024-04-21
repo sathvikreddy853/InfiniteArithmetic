@@ -31,7 +31,9 @@ namespace InfiniteArithmetic
             Float(std::string);
             Float(const Float &);
 
+            // assignment 
             Float &operator=(const Float &);
+            void Assign(const Float &obj);
 
             static void MatchDigits(Float &, Float &);
             static void ResizeEnds(Float &, Float &);

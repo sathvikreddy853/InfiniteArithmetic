@@ -34,6 +34,8 @@ namespace InfiniteArithmetic
 
             // = operator
             Integer &operator=(const Integer &);
+            void Assign(const Integer &obj);
+
 
             // used to `Print` the integer
             void Print();
