@@ -36,7 +36,7 @@ This constructor sets the member variables to appropriate values based on the st
 
 	LOG(InfiniteArithmetic::Integer("212"));
 	// Output = 212
-	
+.
 \end{lstlisting}
 \vspace*{1em}
 
@@ -50,6 +50,7 @@ It is a copy constructor that replicates the values of the object given.
 	namespace InfiniteArithmetic = IA;
 	LOG(IA::Integer(IA::Integer("110")));
 	// Output = 110
+.
 \end{lstlisting}
 \vspace*{1em}
 
@@ -58,11 +59,34 @@ It is a copy constructor that replicates the values of the object given.
 {\ttfamily \large \~{}Integer()} \\[2mm]
 The destructor deletes the vector and the boolean variable \verb|isNegative| explicitly.
 
+
 \subsubsection{Integer parse(const std::string \&)}
 The parse function returns an instance of the \verb|Integer| class.
+
+
 \subsubsection{void Assign(Integer)}
+The \verb|Assign| function assigns the value of one integer to the other.
+\vspace*{1em}
+\begin{lstlisting}[language = C]	
+
+	IA::Integer num1 ("102");
+	IA::Integer num2;
+	num2.Assign(num1);
+	LOG(num2);
+	// Output = 102
+.
+\end{lstlisting}
+\vspace*{1em}
+
+The \verb|= operator| is an other function that has been overloaded to assign one variable to another.
+
+
 \subsubsection{Print}
+The \verb|Print| is a private function that is used to display the contents of the vector. \\
+
+However, the \verb|<<| (insertion operator) has been overloaded.
 \subsubsection{Input}
+Input can be taken through \verb|>>| (extraction operator). 
 \subsubsection{Add}
 \subsubsection{Add2}
 \subsubsection{Subtract}

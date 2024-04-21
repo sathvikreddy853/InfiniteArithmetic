@@ -73,6 +73,13 @@ namespace InfiniteArithmetic
             Float operator-();
             Float operator+();
             Float operator~();
+
+            bool operator>(const Float&);
+            bool operator>=(const Float &);
+            bool operator<(const Float&);
+            bool operator<=(const Float &);
+            bool operator==(const Float &);
+            bool operator!=(const Float &);
     };
 
 }

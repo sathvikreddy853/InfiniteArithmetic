@@ -74,6 +74,13 @@ namespace InfiniteArithmetic
             Integer operator-();
             Integer operator+();
             Integer operator~();
+
+            bool operator>(const Integer&);
+            bool operator>=(const Integer &);
+            bool operator<(const Integer&);
+            bool operator<=(const Integer &);
+            bool operator==(const Integer &);
+            bool operator!=(const Integer &);
     };
 }
 

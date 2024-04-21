@@ -3,5 +3,10 @@
 
 int main()
 {
-	LOG(InfiniteArithmetic::Integer("212"));
+	namespace IA = InfiniteArithmetic;
+
+	IA::Float num1 ("10.2");
+	IA::Float num2;
+	num2.Assign(num1);
+	LOG(num2);
 }
