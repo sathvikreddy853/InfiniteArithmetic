@@ -30,36 +30,24 @@ namespace InfiniteArithmetic
             Float();
             Float(std::string);
             Float(const Float &);
+            static Float parse(const std::string& s);
+
+            ~Float();
 
             // assignment 
             Float &operator=(const Float &);
             void Assign(const Float &obj);
 
-            static void MatchDigits(Float &, Float &);
-            static void ResizeEnds(Float &, Float &);
-
             bool isZero() const;
-
-            Float &Complement() const;
             Float &Negate() const;
-
-            void Print();
-            void PopZero();
 
             friend std::ostream &operator<< (std::ostream &, const Float &);
             friend std::istream &operator>> (std::istream &, Float &);
 
             int16_t Compare(const Float &);
-
             static void SetPrecision(int64_t precision=100);
-            void VerifyString(std::string);
-
-            static Float parse(const std::string& s);
 
             Float Add(Float);
-            Float Add2(Float);
-            // Float &Add2(Float &);        // placeholder
-
             Float Subtract(Float);
             Float Multiply(Float);
             Float MultiplyByDigit(uint16_t);
@@ -72,7 +60,6 @@ namespace InfiniteArithmetic
             Float operator/(const Float &);
             Float operator-();
             Float operator+();
-            Float operator~();
 
             bool operator>(const Float&);
             bool operator>=(const Float &);
@@ -80,6 +67,18 @@ namespace InfiniteArithmetic
             bool operator<=(const Float &);
             bool operator==(const Float &);
             bool operator!=(const Float &);
+
+        private:
+        
+            Float operator~();
+            Float &Complement() const;
+
+            void Print();
+            void PopZero();
+            void VerifyString(std::string);
+
+            static void ResizeEnds(Float &, Float &);
+            static void MatchDigits(Float &, Float &);
     };
 
 }

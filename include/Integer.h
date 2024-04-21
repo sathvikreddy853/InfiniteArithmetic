@@ -1,5 +1,16 @@
 // InfiniteArithmetic/Integer.h
 
+/** @file Integer.h
+ *  @brief Contains the 
+ * 
+ *  This contains the prototypes for the console
+ *  driver and eventually any macros, constants,
+ *  or global variables you will need.
+ *
+ *  @author Sathvik Reddy Bhavanam
+ *  @bug No known bugs.
+ */
+
 #pragma once
 #ifndef INTEGER_H
 #define INTEGER_H
@@ -27,37 +38,27 @@ namespace InfiniteArithmetic
         public:
 
             // constructors
-
             Integer();
             Integer(std::string);            
             Integer(const Integer &);
+            static Integer parse(const std::string& s);
+
+            ~Integer();
 
             // = operator
             Integer &operator=(const Integer &);
             void Assign(const Integer &obj);
 
-
             // used to `Print` the integer
-            void Print();
             friend std::ostream &operator<< (std::ostream &, const Integer &);
             friend std::istream &operator>> (std::istream &, Integer &);
 
-            static void MatchDigits(Integer &, Integer &);
             int16_t Compare(const Integer &);
-
-            // takes the complement of the number with respect to 9
-            Integer Complement() const;
-            void VerifyString(std::string);
-
-            void PopZero();
             bool isZero() const;
-
-            static Integer parse(const std::string& s);
 
             // operations
             Integer Add(Integer);
             Integer &Add2(Integer &);
-
             Integer Subtract(Integer);
             Integer Multiply(Integer);
             Integer MultiplyByDigit(uint16_t);
@@ -73,14 +74,25 @@ namespace InfiniteArithmetic
             Integer operator%(const Integer &);
             Integer operator-();
             Integer operator+();
-            Integer operator~();
 
+            // comparison operators
             bool operator>(const Integer&);
             bool operator>=(const Integer &);
             bool operator<(const Integer&);
             bool operator<=(const Integer &);
             bool operator==(const Integer &);
             bool operator!=(const Integer &);
+
+        private:
+            // takes the complement of the number with respect to 9
+            Integer Complement() const;
+            Integer operator~();    
+
+            void PopZero();
+            void Print();
+
+            void VerifyString(std::string);
+            static void MatchDigits(Integer &, Integer &);
     };
 }
 

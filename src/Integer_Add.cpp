@@ -26,11 +26,10 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Add(Integer otherOne)
         carry = sum/10;
         result.Array.push_back(digit);
 
-
-        if(i == (int64_t)thisOne.Array.size() - 1)
+        if(i == (int64_t)(thisOne.Array.size() - 1))
             inThis = false;
         
-        if(i == (int64_t)otherOne.Array.size() - 1)
+        if(i == (int64_t)(otherOne.Array.size() - 1))
             inOther = false;
     }
 

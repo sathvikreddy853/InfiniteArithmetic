@@ -45,12 +45,17 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}\fancyfoot{}
-\fancyhead[L]{\sffamily InfiniteArithmetic Library}
+\fancyhead[L]{\sffamily Infinite Arithmetic Library}
 
 % last page
 \usepackage{lastpage}
 \fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
 % \renewcommand{\headrulewidth}{0pt}
+
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{xcolor, soul}
+\usepackage[most]{tcolorbox}
 
 \usepackage{titlesec}
 \titleformat{\section}{\normalfont\LARGE\bfseries\sffamily}{\thesection}{1em}{}
@@ -85,7 +90,6 @@
     tabsize=2
 }
 \lstset{style=c_code}
-
 
 % font styles
 \def \bf{\textbf}		% bold face
@@ -126,12 +130,19 @@
 % =========================================================================
 \newpage
 
-
 \tableofcontents
 \newpage
 
+\input{Installation.tex} 
+\newpage
+\input{Design.tex} 
+\newpage
+\input{API_Tables.tex}
+\newpage
 \input{Integer.tex} 
 \newpage
-\input{Float.tex}  % Include Float library documentation
+\input{Float.tex} 
+\newpage
+\input{Conclusion.tex}
 
 \end{document}

@@ -33,7 +33,7 @@ make libmy_inf_arith
 ### Linking The Library
 Just include the header files in your project directory and link the library using the following command:
 ```shell
-g++ <your-file-here>.cpp -o <executable> -std=c++17 -I include/ -L. -llibmy_inf_arith
+g++ <your-file-here>.cpp -o <executable> -std=c++17 -I include/ -L. -lmy_inf_arith
 ```
 
 ## Integer

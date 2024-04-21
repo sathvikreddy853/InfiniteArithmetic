@@ -1,0 +1,75 @@
+\definecolor{tgreen}{HTML}{88FF72}
+\definecolor{tpurple}{RGB}{125, 59, 237}
+\definecolor{tpink}{HTML}{FF6DFC}
+\definecolor{tyellow}{HTML}{FFE675}
+\definecolor{tblue}{HTML}{3E92CC}
+\definecolor{tred}{HTML}{FF7793}
+
+\definecolor{terminal_background}{RGB}{20, 20, 20}
+\definecolor{terminal_text}{RGB}{255, 255, 255}
+
+\lstdefinestyle{terminal}{
+    backgroundcolor=\color{terminal_background},
+    basicstyle=\fontsize{7}{10}\ttfamily\color{terminal_text},
+    moredelim=**[is][\color{tpurple}]{~}{~},
+    moredelim=**[is][\color{tgreen}]{|}{|},
+    moredelim=**[is][\color{tpink}]{@}{@},
+    moredelim=**[is][\color{tyellow}]{ð}{ð},
+    moredelim=**[is][\color{tblue}]{&}{&},
+    moredelim=**[is][\color{tred}]{^}{^},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,              
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+\section{Installation}
+This section consisits of details regarding installation of the library.
+\subsection{Cloning The Repository}
+To clone the repository, use the following command:
+\begin{lstlisting}[style=terminal]
+
+	|git clone| https://github.com/cse-iith/infinite-precision-arithmetic-team-12.git
+.
+\end{lstlisting}
+Cloning the repository creates a local copy of all the files on your computer. You can then use this library to create your own code.
+
+\subsection{Building The Executable}
+\begin{lstlisting}[style=terminal]
+
+	@make@ all
+.
+\end{lstlisting}
+This creates a an executable that can run as your daily calculator.
+
+\subsection{Using The Executable}
+
+\begin{lstlisting}[style=terminal]
+
+	./my_inf_arith ^<^type^>^ ^<^operation^>^ ^<^number1^>^ ^<^number2^>^
+.
+\end{lstlisting}
+
+\subsection{Building The Library}
+To create a library to link with your program run the following command:
+\begin{lstlisting}[style=terminal]
+
+	@make@ libmy_inf_arith
+.
+\end{lstlisting}
+
+
+\subsection{Linking The Library}
+Run the following command to link the library with file:
+\begin{lstlisting}[style=terminal]
+
+	|g++| ^<^your-file-here^>^.cpp -o ^<^executable^>^ -std=c++17 -I include/ -L. -lmy_inf_arith
+.
+\end{lstlisting}

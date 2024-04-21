@@ -3,14 +3,13 @@
 // empty constructor
 InfiniteArithmetic::Integer::Integer()
 {
-    Array = {0};
     isNegative = false;
 }
 
 // integer constructor: `string` -> `integer`
 InfiniteArithmetic::Integer::Integer(std::string num)
 {
-    VerifyString(num);
+    // VerifyString(num);
 
     if(num[0] == '-')
     {
@@ -68,6 +67,10 @@ InfiniteArithmetic::Integer::Integer(const Integer &obj)
         Array.push_back(i);
     
     isNegative = obj.isNegative;
+}
+
+InfiniteArithmetic::Integer::~Integer()
+{
 }
 
 InfiniteArithmetic::Integer &InfiniteArithmetic::Integer::operator=(const Integer &obj)

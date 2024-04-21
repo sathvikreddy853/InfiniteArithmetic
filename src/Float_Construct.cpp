@@ -58,6 +58,10 @@ InfiniteArithmetic::Float::Float(const Float &obj) : PointPosition(obj.PointPosi
         Array.push_back(i);
 }
 
+InfiniteArithmetic::Float::~Float()
+{
+}
+
 InfiniteArithmetic::Float &InfiniteArithmetic::Float::operator=(const Float &obj)
 {
     Array.clear();

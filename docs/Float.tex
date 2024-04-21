@@ -8,49 +8,336 @@ Describe the purpose and functionalities of your Float library here. Explain how
 
 \subsection{API Reference}
 
-Document the functions and methods provided by the Float library, similar to the Integer library section.
-\subsubsection{Constructors}
-\subsubsection{Destructor}
-\subsubsection{parse}
-\subsubsection{Assign}
+Document the functions and methods provided by the Float library, similar to the Float library section.
+
+% \subsubsection{Constructors}
+% \subsubsection{Destructor}
+% \subsubsection{parse}
+% \subsubsection{Assign}
+% \subsubsection{Print}
+% \subsubsection{Input}
+% \subsubsection{Add}
+% \subsubsection{Subtract}
+% \subsubsection{Multiply}
+% \subsubsection{MultiplyByDigit}
+% \subsubsection{Divide}
+% \subsubsection{SetPrecision}
+% \subsubsection{Compare}
+% \subsubsection{Complement}
+% \subsubsection{Negate}
+% \subsubsection{isZero}
+% \subsubsection{MatchDigits}
+% \subsubsection{VerifyString}
+% \subsubsection{PopZero}
+
+Here is a list of a functions that are a part of the \verb|Float| class. 
+
+\subsubsection{Constructors} \vspace*{1em}
+
+{\ttfamily \large Float()} \\[2mm]
+This constructor creates a vector initializes it to \verb|{0}| and initializes \tt{isNegative} to \tt{false}.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+#include "Float.h"
+#include "Float.h"
+
+int main()
+{
+	LOG(InfiniteArithmetic::Float());
+	// Output = 0
+}
+\end{lstlisting}
+\vspace*{1em}
+
+
+\noindent
+{\ttfamily \large Float(std::string num)} \\[2mm]
+This constructor sets the member variables to appropriate values based on the string. It calls the \verb|VerifyString| function internally to check if the string provided is valid or not.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	LOG(InfiniteArithmetic::Float("212"));
+	// Output = 212
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
+\noindent
+{\ttfamily \large Float(const Float \&obj)} \\[2mm]
+It is a copy constructor that replicates the values of the object given.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	namespace InfiniteArithmetic = IA;
+	LOG(IA::Float(IA::Float("110")));
+	// Output = 110
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
+\subsubsection{Destructor}  \vspace*{0.5em}
+
+{\ttfamily \large \~{}Float()} \\[2mm]
+The destructor deletes the vector and the boolean variable \verb|isNegative| explicitly.
+
+
+\subsubsection{parse} 
+
+{\ttfamily \large Float parse(const std::string \&)} \\[2mm]
+The parse function returns an instance of the \verb|Float| class.
+
+\subsubsection{Assign}  
+{\ttfamily \large void Assign(Float)} \\[2mm]
+The \verb|Assign| function assigns the value of one Float to the other.
+\vspace*{1em}
+\begin{lstlisting}[language = C]	
+
+	IA::Float num1 ("102");
+	IA::Float num2;
+	num2.Assign(num1);
+	LOG(num2);
+	// Output = 102
+.
+\end{lstlisting}
+\vspace*{1em}
+
+The \verb|= operator| is an other function that has been overloaded to assign one variable to another.
+
+
 \subsubsection{Print}
+The \verb|Print| is a private function that is used to display the contents of the vector. \\
+However, the \verb|<<| operator (insertion operator) has been overloaded.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	using namespace InfiniteArithmetic;
+
+	Float num1("322");
+
+	std::cout << num1  << std::endl; 
+	// Output = 322
+.
+\end{lstlisting}
+\vspace*{1em}
+
 \subsubsection{Input}
+Input can be taken through \verb|>>| operator (extraction operator). 
+\vspace*{1em}
+\begin{lstlisting}[language = C]	
+
+	using namespace InfiniteArithmetic;
+
+	Float num1;
+	Float num2;
+
+	std::cin >> num1 >> num2;
+.
+\end{lstlisting}
+\vspace*{1em}
+
 \subsubsection{Add}
+{\ttfamily \large Float Add(Float)} \\[2mm]
+The \verb|Add| function takes in two copies of \verb|Float| as it modifies them internally. It call the \verb|MatchDigits| function to adjust the size of the inputs (for proper addition). \\
+The \verb|+| operator has been overloaded. It internally calls the \verb|Add| function.
+\vspace*{1em}
+\begin{lstlisting}[language = C]	
+
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("1023");
+	Float num2 ("3213");
+
+	LOG(num1.Add(num2));
+	// Output = 4236
+.
+\end{lstlisting}
+\vspace*{1em}
+
 \subsubsection{Subtract}
+{\ttfamily \large Float Subtract(Float)} \\[2mm]
+The \verb|Subtract| function negates the second number and calls the \verb|Add| function. \\
+The \verb|-| operator has been overloaded. It internally calls the \verb|Subtract| function.
+\vspace*{1em}
+\begin{lstlisting}[language = C]	
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("1023");
+	Float num2 ("3213");
+
+	LOG(num1.Subtract(num2));
+	// Output = -2190
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
 \subsubsection{Multiply}
+{\ttfamily \large Float Multiply(Float)} \\[2mm]
+The \verb|*| operator has been overloaded for multiplication.
+\vspace*{1em}
+\begin{lstlisting}[language = C]	
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("322");
+	Float num2 ("4221");
+
+	LOG(num1.Multiply(num2));
+	// Output = 1359162
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
 \subsubsection{MultiplyByDigit}
+{\ttfamily \large Float MultiplyByDigit(int)} \\[2mm]
+This function is called internally by \verb|Divide|. It multiplies an \verb|Float| by a single digit\verb|(0-9)|.
+\vspace*{0em}
+\begin{lstlisting}[language = C]
+
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("322");
+	LOG(num1.MultiplyByDigit(2));
+	// Output = 644
+.
+\end{lstlisting}
+
+
 \subsubsection{Divide}
-\subsubsection{SetPrecision}
+{\ttfamily \large Float Divide(Float)} \\[2mm]
+The function \verb|Divide| internally does human long division. The \verb|/| operator has been overloaded for division. Here's an example:
+\vspace*{1em}
+\begin{lstlisting}[language = C]	
+
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("322");
+	Float num2 ("22");
+
+	LOG(num1.Divide(num2));
+	// Output = 14
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
+\subsubsection{Mod}
+{\ttfamily \large Float Mod(Float)} \\[2mm]
+The \verb|Mod| function returns the remainder after a division. It is calculated using the formula $p - (p/q)*q$ where $p$ and $q$ represent \verb|Float| objects.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("322");
+	Float num2 ("23");
+
+	LOG(num1.Mod(num2));
+	// Output = 14
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
 \subsubsection{Compare}
+{\ttfamily \large int16\_t Compare(Float)} \\[2mm]
+The \verb|Compare| function returns a value in \verb|{-1, 0, 1}| depending on which number is greater or lesser. All the comparison operators have been overloaded to do the same.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("2");
+	Float num2 ("5");
+
+	LOG(num1.Compare(num2));
+	// Output = -1
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
 \subsubsection{Complement}
+{\ttfamily \large Float Complement() const} \\[2mm]
+The \verb|Complement| function takes the complement of a number with respect to 9. For example, $102$'s complement is $898$. \\
+It is a private member function.
+
+
 \subsubsection{Negate}
+{\ttfamily \large Float Negate()} \\[2mm]
+The \verb|Negate| function changes the sign of the number. The unary \verb|-| operator also does the same.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+	
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("5");
+	LOG(num1.Negate());
+	// Output = -5
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
 \subsubsection{isZero}
+{\ttfamily \large bool isZero()} \\[2mm]
+The \verb|isZero| function checks if the number is $0$.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	using namespace InfiniteArithmetic;
+
+	Float num1 ("0");
+	LOG(num1.isZero());
+	// Output = 1
+
+	Float num2 ("2");
+	LOG(num2.isZero());
+	// Output = 0
+.
+\end{lstlisting}
+\vspace*{1em}
+
+
 \subsubsection{MatchDigits}
+{\ttfamily \large void MatchDigits(Float \&, Float \&)} \\[2mm]
+The \verb|MatchDigits| is a static function that makes the vectors of the two numbers to equal length. This is a private function.
+
 \subsubsection{ResizeEnds}
+/Sample Text/
+
 \subsubsection{VerifyString}
+{\ttfamily \large void VerifyString(std::string)} \\[2mm]
+The \verb|VerifyString| checks for any non-digit characters and raises an error if found. This is also a private function.
+
 \subsubsection{PopZero}
+{\ttfamily \large void PopZero()} \\[2mm]
+This function removes any redundant zeroes present in the number.
 
-\begin{itemize}
-    \item \textbf{add(a, b)}: Adds two floats `a` and `b` and returns the result as a Float object.
-    \item \textbf{subtract(a, b)}: Subtracts float `b` from `a` and returns the result as a Float object.
-    \item \textbf{multiply(a, b)}: Multiplies two floats `a` and `b` and returns the result as a Float object.
-    \item \textbf{divide(a, b)}: Divides float `a` by `b` and returns the result as a Float object. (Handle division by zero case)
-    \item \textbf{abs(a)}: Returns the absolute value of float `a` as a Float object.
-    \item \textbf{toString()}: Converts the Float object to a string representation.
-    % Add other relevant functions with explanations.
-\end{itemize}
 
-\subsection{Examples}
+% \begin{itemize}
+%     \item \textbf{add(a, b)}: Adds two floats `a` and `b` and returns the result as a Float object.
+%     \item \textbf{subtract(a, b)}: Subtracts float `b` from `a` and returns the result as a Float object.
+%     \item \textbf{multiply(a, b)}: Multiplies two floats `a` and `b` and returns the result as a Float object.
+%     \item \textbf{divide(a, b)}: Divides float `a` by `b` and returns the result as a Float object. (Handle division by zero case)
+%     \item \textbf{abs(a)}: Returns the absolute value of float `a` as a Float object.
+%     \item \textbf{toString()}: Converts the Float object to a string representation.
+%     % Add other relevant functions with explanations.
+% \end{itemize}
 
-Include code examples demonstrating the usage of the Float library functions. 
+% \subsection{Examples}
 
-\begin{verbatim}
->>> a = Float(3.14)
->>> b = Float(2.72)
->>> c = a.add(b)
->>> print(c.toString())  # Output: 5.86
+% Include code examples demonstrating the usage of the Float library functions. 
 
->>> d = a.divide(b)
->>> print(d.toString())  # Output: 1.15... (show limited precision)
-\end{verbatim}
+% \begin{verbatim}
+% >>> a = Float(3.14)
+% >>> b = Float(2.72)
+% >>> c = a.add(b)
+% >>> print(c.toString())  # Output: 5.86
+
+% >>> d = a.divide(b)
+% >>> print(d.toString())  # Output: 1.15... (show limited precision)
+% \end{verbatim}
 
