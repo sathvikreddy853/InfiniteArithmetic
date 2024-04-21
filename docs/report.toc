@@ -9,6 +9,7 @@
 \contentsline {subsection}{\numberline {2.2}Limitations Of Vector}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Error Handling}{5}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Memory Management}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}UML Diagram}{5}{subsection.2.5}%
 \contentsline {section}{\numberline {3}API Tables}{6}{section.3}%
 \contentsline {section}{\numberline {4}Integer Library}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Introduction}{7}{subsection.4.1}%
@@ -47,11 +48,11 @@
 \contentsline {subsubsection}{\numberline {5.2.9}Multiply}{14}{subsubsection.5.2.9}%
 \contentsline {subsubsection}{\numberline {5.2.10}MultiplyByDigit}{14}{subsubsection.5.2.10}%
 \contentsline {subsubsection}{\numberline {5.2.11}Divide}{14}{subsubsection.5.2.11}%
-\contentsline {subsubsection}{\numberline {5.2.12}Mod}{15}{subsubsection.5.2.12}%
+\contentsline {subsubsection}{\numberline {5.2.12}SetPrecision}{15}{subsubsection.5.2.12}%
 \contentsline {subsubsection}{\numberline {5.2.13}Compare}{15}{subsubsection.5.2.13}%
 \contentsline {subsubsection}{\numberline {5.2.14}Complement}{15}{subsubsection.5.2.14}%
 \contentsline {subsubsection}{\numberline {5.2.15}Negate}{15}{subsubsection.5.2.15}%
-\contentsline {subsubsection}{\numberline {5.2.16}isZero}{16}{subsubsection.5.2.16}%
+\contentsline {subsubsection}{\numberline {5.2.16}isZero}{15}{subsubsection.5.2.16}%
 \contentsline {subsubsection}{\numberline {5.2.17}MatchDigits}{16}{subsubsection.5.2.17}%
 \contentsline {subsubsection}{\numberline {5.2.18}ResizeEnds}{16}{subsubsection.5.2.18}%
 \contentsline {subsubsection}{\numberline {5.2.19}VerifyString}{16}{subsubsection.5.2.19}%

@@ -5,9 +5,8 @@ int main()
 {
 	using namespace InfiniteArithmetic;
 
-	Integer num1 ("0");
-	LOG(num1.isZero());
+	Float num1 ("2.2");
+	// Float num2 ("5.5");
 
-	Integer num2 ("2");
-	LOG(num2.isZero());
+	LOG(num1.Negate());
 }

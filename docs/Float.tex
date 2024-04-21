@@ -146,11 +146,11 @@ The \verb|+| operator has been overloaded. It internally calls the \verb|Add| fu
 
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("1023");
-	Float num2 ("3213");
+	Float num1 ("203212.231");
+	Float num2 ("42132.0322");
 
 	LOG(num1.Add(num2));
-	// Output = 4236
+	// Output = 245344.2632
 .
 \end{lstlisting}
 \vspace*{1em}
@@ -163,11 +163,11 @@ The \verb|-| operator has been overloaded. It internally calls the \verb|Subtrac
 \begin{lstlisting}[language = C]	
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("1023");
-	Float num2 ("3213");
+	Float num1 ("203212.231");
+	Float num2 ("42132.0322");
 
 	LOG(num1.Subtract(num2));
-	// Output = -2190
+	// Output = 161080.1988
 .
 \end{lstlisting}
 \vspace*{1em}
@@ -180,11 +180,11 @@ The \verb|*| operator has been overloaded for multiplication.
 \begin{lstlisting}[language = C]	
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("322");
-	Float num2 ("4221");
+	Float num1 ("203212.231");
+	Float num2 ("42132.0322");
 
 	LOG(num1.Multiply(num2));
-	// Output = 1359162
+	// Output = 8561744259.9258382
 .
 \end{lstlisting}
 \vspace*{1em}
@@ -198,9 +198,10 @@ This function is called internally by \verb|Divide|. It multiplies an \verb|Floa
 
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("322");
+	Float num1 ("203212.231");
+
 	LOG(num1.MultiplyByDigit(2));
-	// Output = 644
+	// Output = 406424.462
 .
 \end{lstlisting}
 
@@ -213,32 +214,19 @@ The function \verb|Divide| internally does human long division. The \verb|/| ope
 
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("322");
-	Float num2 ("22");
+	Float num1 ("203212.231");
+	Float num2 ("42132.0322");
 
 	LOG(num1.Divide(num2));
-	// Output = 14
+	// Output = 4.82322405041739239912571793771675699042117...
 .
 \end{lstlisting}
 \vspace*{1em}
 
+\subsubsection{SetPrecision}
+{\ttfamily \large void SetPrecision(int64\_t)} \\[2mm]
+This sets the number of digits after decimal that should be calculated while division happens.
 
-\subsubsection{Mod}
-{\ttfamily \large Float Mod(Float)} \\[2mm]
-The \verb|Mod| function returns the remainder after a division. It is calculated using the formula $p - (p/q)*q$ where $p$ and $q$ represent \verb|Float| objects.
-\vspace*{1em}
-\begin{lstlisting}[language = C]
-
-	using namespace InfiniteArithmetic;
-
-	Float num1 ("322");
-	Float num2 ("23");
-
-	LOG(num1.Mod(num2));
-	// Output = 14
-.
-\end{lstlisting}
-\vspace*{1em}
 
 
 \subsubsection{Compare}
@@ -249,8 +237,8 @@ The \verb|Compare| function returns a value in \verb|{-1, 0, 1}| depending on wh
 
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("2");
-	Float num2 ("5");
+	Float num1 ("2.2");
+	Float num2 ("5.5");
 
 	LOG(num1.Compare(num2));
 	// Output = -1
@@ -273,9 +261,9 @@ The \verb|Negate| function changes the sign of the number. The unary \verb|-| op
 	
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("5");
+	Float num1 ("5.5");
 	LOG(num1.Negate());
-	// Output = -5
+	// Output = -5.5
 .
 \end{lstlisting}
 \vspace*{1em}
@@ -289,11 +277,11 @@ The \verb|isZero| function checks if the number is $0$.
 
 	using namespace InfiniteArithmetic;
 
-	Float num1 ("0");
+	Float num1 ("0.0");
 	LOG(num1.isZero());
 	// Output = 1
 
-	Float num2 ("2");
+	Float num2 ("2.1");
 	LOG(num2.isZero());
 	// Output = 0
 .
@@ -303,10 +291,11 @@ The \verb|isZero| function checks if the number is $0$.
 
 \subsubsection{MatchDigits}
 {\ttfamily \large void MatchDigits(Float \&, Float \&)} \\[2mm]
-The \verb|MatchDigits| is a static function that makes the vectors of the two numbers to equal length. This is a private function.
+The \verb|MatchDigits| method is a static function that makes the vectors of the two numbers to equal length. This is a private function.
 
 \subsubsection{ResizeEnds}
-/Sample Text/
+{\ttfamily \large void ResizeEnds(Float \&, Float \&)} \\[2mm]
+This is similar to the \verb|MatchDigits| function but it works for the fractional part of the floating point number.
 
 \subsubsection{VerifyString}
 {\ttfamily \large void VerifyString(std::string)} \\[2mm]
