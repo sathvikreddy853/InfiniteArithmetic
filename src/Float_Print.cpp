@@ -40,6 +40,12 @@ std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const Infinit
     int64_t Size = num.Array.size();
     // LOG("Size: " << Size << " PP: " << num.PointPosition);
 
+    uint64_t terminate_index = 0;
+    while(printable.Array[terminate_index] == 0 && terminate_index < printable.Array.size() - printable.PointPosition - 2)
+    {
+        terminate_index += 1;
+    }
+
     for(std::vector<uint16_t>::const_reverse_iterator it = printable.Array.rbegin(); it<printable.Array.rend(); it++, count++)
     {
         if (count ==  Size - num.PointPosition + 1)
@@ -47,7 +53,10 @@ std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const Infinit
             std::cout << '.';
             showZero = true;
         }
-        
+
+        if(count == (int64_t)(Size - terminate_index))
+            break;
+
         if (!showZero && *it == 0)   continue;
             showZero = true;
         output << *it;
