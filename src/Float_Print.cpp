@@ -38,7 +38,6 @@ std::ostream &InfiniteArithmetic::operator<<(std::ostream &output, const Infinit
 
     int64_t count = 0;
     int64_t Size = num.Array.size();
-    // LOG("Size: " << Size << " PP: " << num.PointPosition);
 
     uint64_t terminate_index = 0;
     while(printable.Array[terminate_index] == 0 && terminate_index < printable.Array.size() - printable.PointPosition - 2)

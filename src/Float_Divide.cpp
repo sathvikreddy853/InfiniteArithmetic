@@ -6,50 +6,63 @@ InfiniteArithmetic::Float InfiniteArithmetic::Float::Divide(Float divisor)
     Float result;
     Float dividend;
 
-    result.isNegative = this->isNegative ^ divisor.isNegative;
+    try
+    {
+        result.isNegative = this->isNegative ^ divisor.isNegative;
 
-    // setting the variables
-    if (this->isNegative)
-        dividend.Negate();
-    else
-        dividend = *this;
-    
-    if (divisor.isNegative)
-        divisor.Negate();
+        // setting the variables
+        if (this->isNegative)
+            dividend.Negate();
+        else
+            dividend = *this;
+        
+        if (divisor.isNegative)
+            divisor.Negate();
 
-    dividend.PopZero();
-    divisor.PopZero();
+        dividend.PopZero();
+        divisor.PopZero();
 
-    int64_t idigit_diff = (dividend.Array.size() - dividend.PointPosition) - (divisor.Array.size() - divisor.PointPosition) + 1;
-    int64_t tdigit_diff = (dividend.Array.size() - divisor.Array.size()) + 1;
+        if(divisor.isZero())
+        {
+            throw "DivisionByZeroError: The Divisor Provided Is Equal To Zero";
+        }
 
-    int64_t dp = tdigit_diff - idigit_diff;
-    int64_t ap = prec - dp;
+        int64_t idigit_diff = (dividend.Array.size() - dividend.PointPosition) - (divisor.Array.size() - divisor.PointPosition) + 1;
+        int64_t tdigit_diff = (dividend.Array.size() - divisor.Array.size()) + 1;
 
-    // set up the divisor
-    if(prec + 1 - (tdigit_diff - idigit_diff))
-        dividend.Array.insert(dividend.Array.begin(), ap, 0);
+        int64_t dp = tdigit_diff - idigit_diff;
+        int64_t ap = prec - dp;
 
-    // divisor.Array.insert(divisor.Array.begin(), prec - (tdigit_diff - idigit_diff), 0);
+        // set up the divisor
+        if(prec + 1 - (tdigit_diff - idigit_diff))
+            dividend.Array.insert(dividend.Array.begin(), ap, 0);
 
-    Integer num1;
-    Integer num2; 
+        // divisor.Array.insert(divisor.Array.begin(), prec - (tdigit_diff - idigit_diff), 0);
 
-    num1.Array = dividend.Array;
-    num2.Array = divisor.Array;
+        Integer num1;
+        Integer num2; 
 
-    while(!num1.Array.empty() && num1.Array.back() == 0)
-        num1.Array.pop_back();
+        num1.Array = dividend.Array;
+        num2.Array = divisor.Array;
 
-    while(!num2.Array.empty() && num2.Array.back() == 0)
-        num2.Array.pop_back();
+        while(!num1.Array.empty() && num1.Array.back() == 0)
+            num1.Array.pop_back();
 
-    result.Array = (num1/num2).Array;
+        while(!num2.Array.empty() && num2.Array.back() == 0)
+            num2.Array.pop_back();
 
-    result.PointPosition = prec+1;
+        result.Array = (num1/num2).Array;
 
-    if((int64_t)(result.PointPosition - 1 - result.Array.size()) > 0)
-        result.Array.insert(result.Array.end(), result.PointPosition - 1 - result.Array.size(), 0);
+        result.PointPosition = prec+1;
+
+        if((int64_t)(result.PointPosition - 1 - result.Array.size()) > 0)
+            result.Array.insert(result.Array.end(), result.PointPosition - 1 - result.Array.size(), 0);
+    }
+    catch(const char * error_msg)
+    {
+        std::cerr << error_msg << std::endl;
+		exit(1);
+    }
 
     return result;
 }
