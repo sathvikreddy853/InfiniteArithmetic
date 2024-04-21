@@ -9,6 +9,8 @@ InfiniteArithmetic::Float::Float() : PointPosition(1), isNegative(false)
 
 InfiniteArithmetic::Float::Float(std::string num) : PointPosition(1), isNegative(false)
 {
+    VerifyString(num);
+
     if (num[0] == '-')
     {
         isNegative = true;

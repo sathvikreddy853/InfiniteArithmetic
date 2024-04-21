@@ -3,8 +3,5 @@
 InfiniteArithmetic::Integer InfiniteArithmetic::Integer::Mod(Integer other)
 {
 	Integer thisOne = *this;
-	LOG(thisOne);
-	Integer temp = ((thisOne/other) * other);
-	LOG(temp);
-	return thisOne - temp;
+	return thisOne - ((thisOne/other) * other);
 }

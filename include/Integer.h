@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 namespace InfiniteArithmetic
 {
@@ -38,13 +39,14 @@ namespace InfiniteArithmetic
             // used to `Print` the integer
             void Print();
             friend std::ostream &operator<< (std::ostream &, const Integer &);
-            friend std::istream &operator>> (std::istream &, const Integer &);
+            friend std::istream &operator>> (std::istream &, Integer &);
 
             static void MatchDigits(Integer &, Integer &);
             int16_t Compare(const Integer &);
 
             // takes the complement of the number with respect to 9
             Integer Complement() const;
+            void VerifyString(std::string);
 
             void PopZero();
             bool isZero() const;
@@ -73,5 +75,6 @@ namespace InfiniteArithmetic
             Integer operator~();
     };
 }
+
 
 #endif

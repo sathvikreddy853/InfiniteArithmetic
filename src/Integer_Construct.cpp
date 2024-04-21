@@ -9,6 +9,8 @@ InfiniteArithmetic::Integer::Integer()
 // integer constructor: `string` -> `integer`
 InfiniteArithmetic::Integer::Integer(std::string num)
 {
+    VerifyString(num);
+
     if(num[0] == '-')
     {
         isNegative = true;

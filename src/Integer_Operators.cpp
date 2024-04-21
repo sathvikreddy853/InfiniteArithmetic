@@ -20,6 +20,11 @@ InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator/(const Integer
 	return this->Divide(other);
 }
 
+InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator%(const Integer &other)
+{
+	return this->Mod(other);
+}
+
 InfiniteArithmetic::Integer InfiniteArithmetic::Integer::operator-()
 {
 	return this->Negate();

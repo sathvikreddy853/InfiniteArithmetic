@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stdexcept>
 #include "Integer.h"
 
 namespace InfiniteArithmetic
@@ -45,11 +46,12 @@ namespace InfiniteArithmetic
             void PopZero();
 
             friend std::ostream &operator<< (std::ostream &, const Float &);
-            friend std::istream &operator>> (std::istream &, const Float &);
+            friend std::istream &operator>> (std::istream &, Float &);
 
             int16_t Compare(const Float &);
 
             static void SetPrecision(int64_t precision=100);
+            void VerifyString(std::string);
 
             static Float parse(const std::string& s);
 
