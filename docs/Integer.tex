@@ -1,5 +1,103 @@
-\documentclass{article}
+% Integer Library
 
-\begin{document}
-/Sample Text/
-\end{document}
+\section{Integer Library}
+
+\subsection{Introduction}
+
+In this section, describe the purpose and functionalities of your Integer library. Explain how it provides infinite precision arithmetic for integers. 
+
+\subsection{API Reference}
+
+Here, list and explain the functions and methods provided by the Integer library. Use clear and concise explanations.
+
+\subsubsection{Constructors} \vspace*{1em}
+
+{\ttfamily \large Integer()} \\[2mm]
+This constructor creates a vector initializes it to \verb|{0}| and initializes \tt{isNegative} to \tt{false}.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+#include "Integer.h"
+#include "Float.h"
+
+int main()
+{
+	LOG(InfiniteArithmetic::Integer());
+	// Output = 0
+}
+\end{lstlisting}
+\vspace*{1em}
+
+
+\noindent
+{\ttfamily \large Integer(std::string num)} \\[2mm]
+This constructor sets the member variables to appropriate values based on the string. It calls the \verb|VerifyString| function internally to check if the string provided is valid or not.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	LOG(InfiniteArithmetic::Integer("212"));
+	// Output = 212
+	
+\end{lstlisting}
+\vspace*{1em}
+
+
+\noindent
+{\ttfamily \large Integer(const Integer \&obj)} \\[2mm]
+It is a copy constructor that replicates the values of the object given.
+\vspace*{1em}
+\begin{lstlisting}[language = C]
+
+	namespace InfiniteArithmetic = IA;
+	LOG(IA::Integer(IA::Integer("110")));
+	// Output = 110
+\end{lstlisting}
+\vspace*{1em}
+
+
+\subsubsection{Destructor}
+{\ttfamily \large \~{}Integer()} \\[2mm]
+The destructor deletes the vector and the boolean variable \verb|isNegative| explicitly.
+
+\subsubsection{parse}
+The parse function returns an instance of the \verb|Integer| class.
+\subsubsection{Assign}
+\subsubsection{Print}
+\subsubsection{Input}
+\subsubsection{Add}
+\subsubsection{Add2}
+\subsubsection{Subtract}
+\subsubsection{Multiply}
+\subsubsection{MultiplyByDigit}
+\subsubsection{Divide}
+\subsubsection{Mod}
+\subsubsection{Compare}
+\subsubsection{Complement}
+\subsubsection{Negate}
+\subsubsection{isZero}
+\subsubsection{MatchDigits}
+\subsubsection{VerifyString}
+\subsubsection{PopZero}
+
+% \begin{itemize}
+%     \item \textbf{add(a, b)}: Adds two integers `a` and `b` and returns the result as an Integer object.
+%     \item \textbf{subtract(a, b)}: Subtracts integer `b` from `a` and returns the result as an Integer object.
+%     \item \textbf{multiply(a, b)}: Multiplies two integers `a` and `b` and returns the result as an Integer object.
+%     \item \textbf{divide(a, b)}: Divides integer `a` by `b` and returns the result as an Integer object. (Handle division by zero case)
+%     \item \textbf{abs(a)}: Returns the absolute value of integer `a` as an Integer object.
+%     \item \textbf{toString()}: Converts the Integer object to a string representation.
+%     % Add other relevant functions with explanations.
+% \end{itemize}
+
+\subsection{Examples}
+
+Provide code examples demonstrating the usage of the Integer library functions. 
+
+\begin{verbatim}
+>>> a = Integer(10)
+>>> b = Integer(5)
+>>> c = a.add(b)
+>>> print(c.toString())  # Output: 15
+
+>>> d = a.divide(b)
+>>> print(d.toString())  # Output: 2
+\end{verbatim}

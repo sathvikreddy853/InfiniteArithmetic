@@ -11,7 +11,7 @@ BUILD_DIR := ./build
 # where testing scripts are kept
 UTILS_DIR := ./utils
 
-LIB := libmy_inf_arith.a
+LIB := libmy_inf_arith
 
 CXX := clang++
 CXXFLAGS := -Wall -Wextra -g -std=c++17 -I$(INCL_DIR)
@@ -22,7 +22,7 @@ OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
 TEST_FILES := $(wildcard $(UTILS_DIR)/*.out) $(wildcard $(UTILS_DIR)/*.in)
 
-.PHONY : all run lib-inf clean 
+.PHONY : all run $(LIB) clean 
 
 # all1 : 
 #	@echo $(SRCS)
@@ -50,7 +50,7 @@ $(BUILD_DIR)/$(TARGET_EXEC).o : $(SRC_DIR)/$(TARGET_EXEC).cpp $(INCL_DIR)/Intege
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 $(LIB): $(BUILD_DIR) $(OBJS)
-	@ar rcs $@ $(OBJS)
+	@ar rcs $@.a $(OBJS)
 	@echo "Building Library!"
 
 run : 
@@ -58,8 +58,8 @@ run :
 	@echo "Running Calculator"
 
 clean :
-	-@rm -r $(BUILD_DIR)
-	-@rm $(TARGET_EXEC)
-	-@rm $(TEST_FILES)
-	-@rm $(LIB)
+	@-rm -rf $(BUILD_DIR)
+	@-rm -f $(TARGET_EXEC)
+	@-rm -f $(TEST_FILES)
+	@-rm -f $(LIB).a
 	@echo "Clearing All Files!"

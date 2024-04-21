@@ -3,6 +3,7 @@
 // empty constructor
 InfiniteArithmetic::Integer::Integer()
 {
+    Array = {0};
     isNegative = false;
 }
 
